@@ -1,0 +1,5 @@
+﻿FlightNumber,DepartureAirportCode,ArrivalAirportCode,DepartureTime,ArrivalTime
+AZ0128,MXP,CPH,2022-05-03 07:40,2022-05-03 10:05
+AZ5120,AAL,AAR,2022-05-01 09:10,2022-05-01 09:40
+AZ1304,LIN,SUF,2022-05-12 10:10,2022-05-12 11:45
+
