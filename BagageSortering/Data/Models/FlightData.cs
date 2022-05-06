@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BagageSortering.Models
+namespace BagageSortering.Data.Database.Models
 {
     public class FlightData
     {
@@ -30,6 +30,23 @@ namespace BagageSortering.Models
             set { arrivalAirportCode = value; }
         }
 
+        private string departureGate;
+
+        public string DepartureGate
+        {
+            get { return departureGate; }
+            set { departureGate = value; }
+        }
+
+        private string arrivalGate;
+
+        public string ArrivalGate
+        {
+            get { return arrivalGate; }
+            set { arrivalGate = value; }
+        }
+
+
         private DateTime departureTime;
 
         public DateTime DepartureTime
@@ -44,6 +61,14 @@ namespace BagageSortering.Models
         {
             get { return arrivalTime; }
             set { arrivalTime = value; }
+        }
+
+        private int maxPassengers;
+
+        public int MaxPassengers
+        {
+            get { return maxPassengers; }
+            set { maxPassengers = value; }
         }
 
 

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BagageSortering.Models
+namespace BagageSortering.Data.Models
 {
-    public class Luggage
+    public class BaggageTag
     {
+
     }
 }

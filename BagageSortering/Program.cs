@@ -1,4 +1,5 @@
-﻿using BagageSortering.Models;
+﻿using BagageSortering.Data.Database.Processing;
+using BagageSortering.Models;
 using CsvHelper;
 using System;
 using System.Globalization;
@@ -10,22 +11,16 @@ namespace BagageSortering
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            AirportDataProcessor processor = new AirportDataProcessor();
+            processor.Initialize();
+            processor.GenerateRandomReservations();
 
-            using (var reader = new StreamReader("C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Database/Csv/Flights.csv"))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                var records = csv.GetRecords<FlightData>();
+            //processor.GenerateRandomReservations();
 
-                foreach(FlightData flight in records)
-                {
-                    Console.WriteLine();
-                }
 
-                Console.WriteLine(records);
-            }
 
-            
+
+
 
             Console.ReadKey();
         }
