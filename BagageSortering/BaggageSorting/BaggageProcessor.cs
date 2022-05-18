@@ -16,7 +16,7 @@ namespace BagageSortering.BaggageSorting
         }
         public string GenerateBaggageCode(PassengerReservation reservation)
         {
-            string destination = 
+            return "";
         }
     }
 }

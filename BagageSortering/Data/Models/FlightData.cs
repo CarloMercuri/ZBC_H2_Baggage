@@ -71,6 +71,13 @@ namespace BagageSortering.Data.Database.Models
             set { maxPassengers = value; }
         }
 
+        private string status;
+
+        public string Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
 
 
     }

@@ -1,5 +1,5 @@
-﻿FlightNumber,DepartureAirportCode,ArrivalAirportCode,DepartureGate,ArrivalGate,DepartureTime,ArrivalTime,MaxPassengers
-AZ0128,MXP,CPH,B7,n/a,2022-05-03 07:40,2022-05-03 10:05,201
-AZ5120,AAL,AAR,D2,n/a,2022-05-01 09:10,2022-05-01 09:40,128
-AZ1304,LIN,SUF,D4,n/a,2022-05-12 10:10,2022-05-12 11:45,146
+﻿FlightNumber,DepartureAirportCode,ArrivalAirportCode,DepartureGate,ArrivalGate,DepartureTime,ArrivalTime,MaxPassengers,Status
+AZ0128,MXP,CPH,B7,n/a,2022-05-03 07:40,2022-05-03 10:05,201,ARRIVED
+AZ5120,AAL,AAR,D2,n/a,2022-05-01 09:10,2022-05-01 09:40,128,GATE OPENS 08:30
+AZ1304,LIN,SUF,D4,n/a,2022-05-12 10:10,2022-05-12 11:45,146,DEPARTED
 

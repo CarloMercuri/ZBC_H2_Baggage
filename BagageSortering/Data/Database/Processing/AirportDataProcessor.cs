@@ -28,6 +28,25 @@ namespace BagageSortering.Data.Database.Processing
             LoadDataInMemory();
         }
 
+        public List<FlightData> GetFlightsList()
+        {
+            return flightsList;
+        }
+
+        public string GetAirportNameFromCode(string airportCode)
+        {
+            Airport found = airports.Find(x => x.AirportCode == airportCode);
+
+            if(found is null)
+            {
+                return "";
+            }
+            else
+            {
+                return found.AirportName;
+            }
+        }
+
         public int GetTerminalNumber(string gate)
         {
             return terminalGates[gate];
