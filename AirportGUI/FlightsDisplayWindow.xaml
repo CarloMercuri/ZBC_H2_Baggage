@@ -60,8 +60,8 @@
         <Border Grid.Row="10" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
 
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">Airline</TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">Flight</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource style_FlightDisplayColumnTitle}">Airline</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource style_FlightDisplayColumnTitle}">Flight</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">Destination</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">ETD</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">Gate</TextBlock>

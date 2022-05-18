@@ -13,21 +13,16 @@ namespace BagageSortering.Data.Database.Processing
 {
     public class CsvHelper
     {
-        public void Test()
-        {
-            using (var reader = new StreamReader("C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Database/Csv/Flights.csv"))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                var records = csv.GetRecords<FlightData>();
+        //private string FolderPath = "C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Database/Csv/";
+        private string FolderPath = "D:/dev/school/ZBC_H2_Baggage/BagageSortering/Data/Database/Csv/";
+        private string airports_FN = "Airports.csv";
+        private string TerminalGates_FN = "AirportTerminalGates.csv";
+        private string Flights_FN = "Flights.csv";
+        private string PassengerReservations_FN = "PassengerReservations.csv";
+        private string Passengers_FN = "Passengers.csv";
+        private string Reservations_FN = "Reservations.csv";
+    
 
-                foreach (FlightData flight in records)
-                {
-                    Console.WriteLine();
-                }
-
-                Console.WriteLine(records);
-            }
-        }
 
         public void AddToReservations(List<Reservation> reservations)
         {
@@ -37,7 +32,7 @@ namespace BagageSortering.Data.Database.Processing
                 HasHeaderRecord = false,
             };
 
-            using (var stream = File.Open("C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Data/Database/Csv/Reservations.csv", FileMode.Append))
+            using (var stream = File.Open(Path.Combine(FolderPath, Reservations_FN), FileMode.Append))
             using (var writer = new StreamWriter(stream))
             using (var csv = new CsvWriter(writer, config))
             {
@@ -53,7 +48,7 @@ namespace BagageSortering.Data.Database.Processing
                 HasHeaderRecord = false,
             };
 
-            using (var stream = File.Open("C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Data/Database/Csv/PassengerReservations.csv", FileMode.Append))
+            using (var stream = File.Open(Path.Combine(FolderPath, PassengerReservations_FN), FileMode.Append))
             using (var writer = new StreamWriter(stream))
             using (var csv = new CsvWriter(writer, config))
             {
@@ -69,7 +64,7 @@ namespace BagageSortering.Data.Database.Processing
                 HasHeaderRecord = false,
             };
 
-            using (var stream = File.Open("C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Data/Database/Csv/Passengers.csv", FileMode.Append))
+            using (var stream = File.Open(Path.Combine(FolderPath, Passengers_FN), FileMode.Append))
             using (var writer = new StreamWriter(stream))
             using (var csv = new CsvWriter(writer, config))
             {
@@ -81,7 +76,7 @@ namespace BagageSortering.Data.Database.Processing
         {
             try
             {
-                using (var reader = new StreamReader("C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Data/Database/Csv/Reservations.csv"))
+                using (var reader = new StreamReader(Path.Combine(FolderPath, Reservations_FN)))
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
                     var records = csv.GetRecords<Reservation>();
@@ -102,7 +97,7 @@ namespace BagageSortering.Data.Database.Processing
         {
             try
             {
-                using (var reader = new StreamReader("C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Data/Database/Csv/PassengerReservations.csv"))
+                using (var reader = new StreamReader(Path.Combine(FolderPath, PassengerReservations_FN)))
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
                     var records = csv.GetRecords<PassengerReservation>();
@@ -123,7 +118,7 @@ namespace BagageSortering.Data.Database.Processing
         {
             try
             {
-                using (var reader = new StreamReader("C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Data/Database/Csv/Passengers.csv"))
+                using (var reader = new StreamReader(Path.Combine(FolderPath, Passengers_FN)))
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
                     var records = csv.GetRecords<Passenger>();
@@ -144,7 +139,7 @@ namespace BagageSortering.Data.Database.Processing
         {
             try
             {
-                using (var reader = new StreamReader("C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Data/Database/Csv/Reservations.csv"))
+                using (var reader = new StreamReader(Path.Combine(FolderPath, Reservations_FN)))
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
                     var records = csv.GetRecords<Reservation>();
@@ -165,7 +160,7 @@ namespace BagageSortering.Data.Database.Processing
         {
             try
             {
-                using (var reader = new StreamReader("C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Data/Database/Csv/AirportTerminalGates.csv"))
+                using (var reader = new StreamReader(Path.Combine(FolderPath, TerminalGates_FN)))
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
                     var records = csv.GetRecords<AirportTerminalGates>();
@@ -192,7 +187,7 @@ namespace BagageSortering.Data.Database.Processing
         {
             try
             {
-                using (var reader = new StreamReader("C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Data/Database/Csv/Airports.csv"))
+                using (var reader = new StreamReader(Path.Combine(FolderPath, airports_FN)))
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
                     var records = csv.GetRecords<Airport>();
@@ -213,7 +208,7 @@ namespace BagageSortering.Data.Database.Processing
         {
             try
             {
-                using (var reader = new StreamReader("C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Data/Database/Csv/Flights.csv"))
+                using (var reader = new StreamReader(Path.Combine(FolderPath, Flights_FN)))
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
                     var records = csv.GetRecords<FlightData>();
