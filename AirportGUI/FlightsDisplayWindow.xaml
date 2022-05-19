@@ -6,71 +6,76 @@
         xmlns:local="clr-namespace:AirportGUI"
         mc:Ignorable="d"
         Title="FlightsDisplayWindow" Height="650" Width="900">
-    
-    <Grid x:Name="mainGrid" Background="#313443">
-        
-        <!--<Grid.Background>
-                <ImageBrush ImageSource="Resources\bg_full.png"/>
-            </Grid.Background>-->
-        <Grid.RowDefinitions>
+    <Border BorderBrush="#333333" BorderThickness="6">
+        <Grid x:Name="mainGrid" Background="#313443">
 
-            <RowDefinition Height="0.80*" />
-            <RowDefinition Height="1.10*" />
-            <RowDefinition Height="1.10*" />
-            <RowDefinition Height="1.10*" />
-            <RowDefinition Height="1.10*" />
-            <RowDefinition Height="1.10*" />
-            <RowDefinition Height="1.10*" />
-            <RowDefinition Height="1.10*" />
-            <RowDefinition Height="1.10*" />
-            <RowDefinition Height="1.10*" />
-            <RowDefinition Height="1.10*" />
-            <RowDefinition Height="1.10*" />
-            <RowDefinition Height="1.10*" />
-            <RowDefinition Height="1.10*" />
-            <RowDefinition Height="1.10*" />
-           
-            
+            <!--<Grid.Background>
+                    <ImageBrush ImageSource="Resources\bg_full.png"/>
+                </Grid.Background>-->
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="0.80*" />
+                <RowDefinition Height="1.10*" />
+                <RowDefinition Height="1.10*" />
+                <RowDefinition Height="1.10*" />
+                <RowDefinition Height="1.10*" />
+                <RowDefinition Height="1.10*" />
+                <RowDefinition Height="1.10*" />
+                <RowDefinition Height="1.10*" />
+                <RowDefinition Height="1.10*" />
+                <RowDefinition Height="1.10*" />
+                <RowDefinition Height="1.10*" />
+                <RowDefinition Height="1.10*" />
+                <RowDefinition Height="1.10*" />
+                <RowDefinition Height="1.10*" />
+                <RowDefinition Height="1.10*" />
 
 
 
-        </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.40*" />
-            <ColumnDefinition Width="0.40*" />
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="0.20*" />
-            <ColumnDefinition Width="0.15*" />
-            <ColumnDefinition Width="*" />
-  
-        </Grid.ColumnDefinitions>
 
 
-        <Border Grid.Row="0" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-        <Border Grid.Row="1" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-        <Border Grid.Row="2" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-        <Border Grid.Row="3" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-        <Border Grid.Row="4" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-        <Border Grid.Row="5" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-        <Border Grid.Row="6" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-        <Border Grid.Row="7" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-        <Border Grid.Row="8" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-        <Border Grid.Row="9" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-        <Border Grid.Row="10" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.40*" />
+                <ColumnDefinition Width="0.40*" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="0.20*" />
+                <ColumnDefinition Width="0.15*" />
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
 
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource style_FlightDisplayColumnTitle}">Airline</TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource style_FlightDisplayColumnTitle}">Flight</TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">Destination</TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">ETD</TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">Gate</TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">    Status</TextBlock>
-        
-        <!--<TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayYellow}">UJSHR</TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayWhite}">VANCOUVER</TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayYellow}">11:25</TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource style_FlightDisplayWhite}">20</TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayYellow}">GATE OPENS 11.30</TextBlock>-->
-    </Grid>
+            <Border Grid.Row="0" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="1" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="2" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="3" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="4" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="5" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="6" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="7" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="8" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="9" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="10" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="11" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="12" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="13" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="14" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource style_FlightDisplayColumnTitle}">Airline</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource style_FlightDisplayColumnTitle}">Flight</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">Destination</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">ETD</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">Gate</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">    Status</TextBlock>
+
+            <!--<TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayYellow}">UJSHR</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayWhite}">VANCOUVER</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayYellow}">11:25</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource style_FlightDisplayWhite}">20</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayYellow}">GATE OPENS 11.30</TextBlock>-->
+        </Grid>
+    </Border>
 </Window>

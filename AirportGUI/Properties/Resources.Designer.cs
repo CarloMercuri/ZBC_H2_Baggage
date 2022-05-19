@@ -63,6 +63,16 @@ namespace AirportGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Background {
+            get {
+                object obj = ResourceManager.GetObject("Background", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] logo_Alitalia {
             get {
                 object obj = ResourceManager.GetObject("logo_Alitalia", resourceCulture);

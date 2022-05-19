@@ -7,11 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Background.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BagageSortering\BagageSortering.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Resources\Icons\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Background.jpg" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using BagageSortering.Data.Database.Models;
+using BagageSortering.Data.Models;
 using BagageSortering.Errors;
 using CsvHelper;
 using CsvHelper.Configuration;
@@ -13,12 +14,14 @@ namespace BagageSortering.Data.Database.Processing
 {
     public class CsvHelper
     {
-        //private string FolderPath = "C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Database/Csv/";
-        private string FolderPath = "D:/dev/school/ZBC_H2_Baggage/BagageSortering/Data/Database/Csv/";
+
+        private string FolderPath = "C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Data/Database/Csv/";
+        //private string FolderPath = "D:/dev/school/ZBC_H2_Baggage/BagageSortering/Data/Database/Csv/";
         private string airports_FN = "Airports.csv";
         private string TerminalGates_FN = "AirportTerminalGates.csv";
         private string Flights_FN = "Flights.csv";
         private string PassengerReservations_FN = "PassengerReservations.csv";
+        private string AirlineInformation_FN = "Companies.csv";
         private string Passengers_FN = "Passengers.csv";
         private string Reservations_FN = "Reservations.csv";
     
@@ -53,6 +56,22 @@ namespace BagageSortering.Data.Database.Processing
             using (var csv = new CsvWriter(writer, config))
             {
                 csv.WriteRecords(preservations);
+            }
+        }
+
+        public void AddFlights(List<FlightData> flights)
+        {
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                // Don't write the header again.
+                HasHeaderRecord = false,
+            };
+
+            using (var stream = File.Open(Path.Combine(FolderPath, Flights_FN), FileMode.Append))
+            using (var writer = new StreamWriter(stream))
+            using (var csv = new CsvWriter(writer, config))
+            {
+                csv.WriteRecords(flights);
             }
         }
 
@@ -112,6 +131,26 @@ namespace BagageSortering.Data.Database.Processing
                 return null;
             }
 
+        }
+
+        public List<AirlineInformation> LoadAirlines()
+        {
+            try
+            {
+                using (var reader = new StreamReader(Path.Combine(FolderPath, AirlineInformation_FN)))
+                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                {
+                    var records = csv.GetRecords<AirlineInformation>();
+
+                    return Enumerable.ToList(records);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorLogger log = new ErrorLogger();
+                log.LogError(ex);
+                return null;
+            }
         }
 
         public List<Passenger> LoadPassengerData()

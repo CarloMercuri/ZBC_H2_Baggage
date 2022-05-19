@@ -11,10 +11,7 @@ namespace BagageSortering
     {
         static void Main(string[] args)
         {
-            AirportDataProcessor processor = new AirportDataProcessor();
-            processor.Initialize();
-            processor.GenerateRandomReservations();
-
+          
             //processor.GenerateRandomReservations();
 
 

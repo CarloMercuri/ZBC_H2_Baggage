@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AirportGUI.Data;
+using BagageSortering.Airportcontrol;
+using BagageSortering.Data.Database.Processing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +26,9 @@ namespace AirportGUI
         public MainWindow()
         {
             InitializeComponent();
+            AirportManager processor = AirportManager.Instance;
+            //Constants constants = new Constants();
+            //processor.GenerateFlights(constants.CurrentTime);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

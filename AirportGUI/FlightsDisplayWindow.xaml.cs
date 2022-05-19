@@ -1,4 +1,5 @@
 ﻿using AirportGUI.GUIModels;
+using BagageSortering.Airportcontrol;
 using BagageSortering.Data.Database.Models;
 using BagageSortering.Data.Database.Processing;
 using System;
@@ -23,12 +24,16 @@ namespace AirportGUI
         public FlightsDisplayWindow()
         {
             InitializeComponent();
-            AirportDataProcessor  airportData = new AirportDataProcessor();
-            airportData.Initialize();
-            List<FlightData> flights = airportData.GetFlightsList();
+            AirportManager processor = AirportManager.Instance;
 
-            for (int i = 0; i < flights.Count; i++)
+
+            List<FlightData> flights = processor.GetUpcomingFlights();
+            Console.WriteLine();
+
+            for (int i = 0; i < mainGrid.RowDefinitions.Count - 1; i++)
             {
+                if (i >= flights.Count) break;
+                
                 FlightDataDisplay disp = new FlightDataDisplay(flights[i], mainGrid, i + 1);
             }
 

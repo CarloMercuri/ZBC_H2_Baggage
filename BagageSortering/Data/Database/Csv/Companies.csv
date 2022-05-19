@@ -1,2 +1,13 @@
-﻿Id,Name,LogoPath
-1,Alitalia,Alitalia.jpg
+﻿ID,Prefix,Name,LogoFileName
+1,AZ,Alitalia,Alitalia.jpg
+2,FR,RyanAir,RyanAir.png
+3,AC,Air Canada,AirCanada.png
+4,AS,Alaska Airlines,Alaska.png
+5,EK,Emirates,Emirates.png
+6,JL,Japan Airlines,Japan.png
+7,LH,Lufthansa,Lufthansa.png
+8,QF,Qantas,Qantas.png
+9,SK,SAS,Sas.png
+10,TK,Turkish Airlines,Turkish.png
+11,UA,United,United.png
+12,VA,Virgin Australia,Virgin.png

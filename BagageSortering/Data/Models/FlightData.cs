@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BagageSortering.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,7 @@ namespace BagageSortering.Data.Database.Models
 {
     public class FlightData
     {
+
         private string flightNumber;
 
         public string FlightNumber
@@ -47,17 +49,17 @@ namespace BagageSortering.Data.Database.Models
         }
 
 
-        private DateTime departureTime;
+        private string departureTime;
 
-        public DateTime DepartureTime
+        public string DepartureTime
         {
             get { return departureTime; }
             set { departureTime = value; }
         }
 
-        private DateTime arrivalTime;
+        private string arrivalTime;
 
-        public DateTime ArrivalTime
+        public string ArrivalTime
         {
             get { return arrivalTime; }
             set { arrivalTime = value; }

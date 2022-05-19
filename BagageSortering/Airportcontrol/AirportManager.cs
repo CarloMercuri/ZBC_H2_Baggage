@@ -1,79 +1,136 @@
 ﻿using BagageSortering.Data.Database.Models;
+using BagageSortering.Data.Database.Processing;
+using BagageSortering.Data.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
-namespace BagageSortering.Data.Database.Processing
+namespace BagageSortering.Airportcontrol
 {
-    public class AirportDataProcessor
+    public sealed class AirportManager
     {
-        private List<FlightData> flightsList;
-        private List<Airport> airports;
-        private List<Reservation> reservations;
-        private List<PassengerReservation> passengerReservations;
-        private List<Passenger> passengers;
-        private Dictionary<string, int> terminalGates;
+        private static AirportManager instance = null;
+        private static readonly object padlock = new object();
+        private AirportDataProcessor dataProcessor;
 
-        RandomNameGenerator nameGenerator;
-
-
-
-        public AirportDataProcessor()
+        public static AirportManager Instance
         {
-            
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new AirportManager();
+                    }
+                    return instance;
+                }
+            }
         }
 
-        public void Initialize()
+        private AirportManager()
         {
-            LoadDataInMemory();
+            dataProcessor = new AirportDataProcessor();
         }
 
         public List<FlightData> GetFlightsList()
         {
-            return flightsList;
+            return dataProcessor.GetFlightsList();
         }
 
         public string GetAirportNameFromCode(string airportCode)
         {
-            Airport found = airports.Find(x => x.AirportCode == airportCode);
-
-            if(found is null)
-            {
-                return "";
-            }
-            else
-            {
-                return found.AirportName;
-            }
+            return dataProcessor.GetAirportNameFromCode(airportCode);
         }
 
         public int GetTerminalNumber(string gate)
         {
-            return terminalGates[gate];
+            return dataProcessor.GetTerminalNumber(gate);
         }
 
-        private int GetReservationID(int passengerReservationID)
+        public void GenerateFlights(DateTime startDT)
         {
-            return passengerReservations.Find(x => x.ReservationID == passengerReservationID).ReservationID;
+            Random rand = new Random();
+            List<Airport> airports = dataProcessor.GetAirports();
+            Dictionary<string, int> terminalGates = dataProcessor.GetTerminalGates();
+            List<FlightData> flights = new List<FlightData>();
+
+            for (int i = 0; i < 30; i++)
+            {
+                FlightData flight = new FlightData();
+                flight.FlightNumber = GenerateRandomFlightNumber();
+                flight.DepartureAirportCode = airports[rand.Next(0, airports.Count)].AirportCode;
+
+                bool arrivalFound = false;
+                string arrivalCode = "";
+
+                while (!arrivalFound)
+                {
+                    arrivalCode = airports[rand.Next(0, airports.Count)].AirportCode;
+                    if(arrivalCode != flight.DepartureAirportCode)
+                    {
+                        arrivalFound = true;
+                    }
+                }
+
+                flight.ArrivalAirportCode = arrivalCode;
+
+                string terminalGate = rand.Next(0, 2) == 0 ? "D" : "B";
+
+                flight.DepartureGate = terminalGate + rand.Next(1, 9).ToString();
+                flight.ArrivalGate = "n/a";
+                flight.DepartureTime = startDT.ToString("yyyy-MM-dd HH:mm");
+                flight.ArrivalTime = startDT.AddMinutes(rand.Next(45, 240)).ToString("yyy-MM-dd HH:mm");
+                flight.MaxPassengers = rand.Next(130, 256);
+                flight.Status = "";
+
+                flights.Add(flight);
+
+                startDT = startDT.AddMinutes(rand.Next(3, 30));
+            }
+
+            dataProcessor.AddFlights(flights);
         }
 
-        private string GetFlightNumber(int reservationID)
+        public List<FlightData> GetUpcomingFlights()
         {
-            return reservations.Find(x => x.ReservationID == reservationID).FlightNumber;
+            List<FlightData> allFlights = dataProcessor.GetFlightsList();
+
+            allFlights.RemoveAll(x => DateTime.Parse(x.DepartureTime) < DateTime.Now);
+            List<FlightData> orderedList = allFlights.OrderBy(x => DateTime.Parse(x.DepartureTime)).ToList();
+
+            return orderedList;
+        }
+
+        private string GenerateRandomFlightNumber()
+        {
+            Random rand = new Random();
+            List<AirlineInformation> airlines = dataProcessor.GetAirlines();
+
+            AirlineInformation airline = airlines[rand.Next(0, airlines.Count)];
+
+            var sb = new StringBuilder();
+
+            sb.Append(airline.Prefix);
+
+            for (int i = 0; i < 4; i++)
+            {
+                sb.Append(rand.Next(1, 10).ToString());
+            }
+
+            return sb.ToString();
         }
 
         public int GetBaggageTerminalDestination(int passengerReservationID)
         {
-            int resID = GetReservationID(passengerReservationID);
-            string flightNr = GetFlightNumber(resID);
-            string departureGate = flightsList.Find(x => x.FlightNumber == flightNr).DepartureGate;
-            return GetTerminalNumber(departureGate);
+            return dataProcessor.GetBaggageTerminalDestination(passengerReservationID);
 
         }
 
         public string GetBaggageDestinationCode(int pResID)
         {
-            return flightsList.Find(x => x.FlightNumber == GetFlightNumber(GetReservationID(pResID))).ArrivalAirportCode;
+            return dataProcessor.GetBaggageDestinationCode(pResID);
         }
 
         public void GenerateRandomReservations()
@@ -84,8 +141,9 @@ namespace BagageSortering.Data.Database.Processing
             List<Reservation> reservationsFinal = new List<Reservation>();
             int passengerIndex = 0;
             int reservationID = 0;
+            List<FlightData> flightsList = dataProcessor.GetFlightsList();
 
-            foreach(FlightData flight in flightsList)
+            foreach (FlightData flight in flightsList)
             {
                 // Generate a Reservations count, to allow families to group up under the same reservation
                 int reservationsCount = rand.Next(flight.MaxPassengers - flight.MaxPassengers / 2, flight.MaxPassengers);
@@ -145,35 +203,35 @@ namespace BagageSortering.Data.Database.Processing
                 }
             }
 
-            CsvHelper helper = new CsvHelper();
-            helper.AddToReservations(reservationsFinal);
-            helper.AddToPassengerReservations(pReservations);
+            
+            dataProcessor.AddToReservations(reservationsFinal);
+            dataProcessor.AddToPassengerReservations(pReservations);
 
         }
 
-        private void CreatePassengerReservation(int reservationID, int passengerID, int checkedLuggage, int maxLuggage)
+        public AirlineInformation GetAirline(string flightNumber)
         {
+            return dataProcessor.GetAirline(flightNumber);
+        }
 
-            PassengerReservation pres = new PassengerReservation();
-            pres.ReservationID = reservationID;
-            pres.PassengerID = passengerID;
-            pres.CheckedLuggage = checkedLuggage;
-            pres.MaxLuggage = maxLuggage;
+        public string GetAirlineLogo(string flightNumber)
+        {
+            return dataProcessor.GetAirlineLogo(flightNumber);
         }
 
         public void FillPassengers()
         {
-            nameGenerator = new RandomNameGenerator();
+            RandomNameGenerator nameGenerator = new RandomNameGenerator();
             nameGenerator.LoadData();
 
             List<Passenger> passengers = new List<Passenger>();
 
             for (int i = 0; i < 300; i++)
             {
-               
-                string name = nameGenerator.GenerateRandomFirstName(i%2 == 0);
+
+                string name = nameGenerator.GenerateRandomFirstName(i % 2 == 0);
                 string lastName = nameGenerator.GenerateRandomLastName();
-                string tlf = GeneratRandomNumber(8);
+                string tlf = GenerateRandomNumber(8);
                 string email = GenerateRandomEmail(name, lastName);
                 DateTime birthday = GenerateRandomBirthday();
 
@@ -187,9 +245,8 @@ namespace BagageSortering.Data.Database.Processing
 
                 passengers.Add(p);
             }
-
-            CsvHelper helper = new CsvHelper();
-            helper.AddToPassengers(passengers);
+                        
+            dataProcessor.AddToPassengers(passengers);
         }
 
         private DateTime GenerateRandomBirthday()
@@ -204,7 +261,7 @@ namespace BagageSortering.Data.Database.Processing
         {
             Random rand = new Random();
             string provider = "";
-            switch(rand.Next(0, 4))
+            switch (rand.Next(0, 4))
             {
                 case 0:
                     provider = "gmail.com";
@@ -221,7 +278,7 @@ namespace BagageSortering.Data.Database.Processing
 
             }
 
-            return $"{name.Substring(0, (name.Length >= 3? 3 : name.Length))}.{lastName.Substring(0, (lastName.Length >= 3 ? 3 : lastName.Length))}@{provider}".ToLower();
+            return $"{name.Substring(0, (name.Length >= 3 ? 3 : name.Length))}.{lastName.Substring(0, (lastName.Length >= 3 ? 3 : lastName.Length))}@{provider}".ToLower();
         }
 
         /// <summary>
@@ -229,7 +286,7 @@ namespace BagageSortering.Data.Database.Processing
         /// </summary>
         /// <param name="length">Length of number</param>
         /// <returns>Generated string</returns>
-        private string GeneratRandomNumber(int length)
+        private string GenerateRandomNumber(int length)
         {
             if (length > 0)
             {
@@ -250,20 +307,6 @@ namespace BagageSortering.Data.Database.Processing
             }
 
             return string.Empty;
-        }
-
-        private void LoadDataInMemory()
-        {
-            CsvHelper csvHelper = new CsvHelper();
-
-            flightsList = csvHelper.LoadFlightData();
-            airports = csvHelper.LoadAirportsData();
-            reservations = csvHelper.LoadReservationData();
-            passengerReservations = csvHelper.LoadPassengerReservationsData();
-            terminalGates = csvHelper.LoadTerminalGatesData();
-            passengers = csvHelper.LoadPassengerData();
-
-            Console.WriteLine();
         }
     }
 }

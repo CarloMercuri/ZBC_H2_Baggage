@@ -1,6 +1,9 @@
-﻿using BagageSortering.Data.Database.Models;
+﻿using AirportGUI.Data;
+using BagageSortering.Airportcontrol;
+using BagageSortering.Data.Database.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,13 +16,16 @@ namespace AirportGUI.GUIModels
     {
         public FlightDataDisplay(FlightData flight, Grid parentGrid, int row)
         {
+            Constants constants = new Constants();
+            AirportManager manager = AirportManager.Instance;
 
             //
             // Logo
             //
 
             Image logo = new Image();
-            logo.Source = new BitmapImage(new Uri("D:/dev/school/ZBC_H2_Baggage/AirportGUI/Resources/Icons/Alitalia.jpg"));
+            logo.Source = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, manager.GetAirlineLogo(flight.FlightNumber))));
+            //logo.Source = new BitmapImage(new Uri("D:/dev/school/ZBC_H2_Baggage/AirportGUI/Resources/Icons/Alitalia.jpg"));
              //Image img = Properties.Resources.logo_Alitalia;
             //logo.Source = Properties.Resources.logo_Alitalia as ImageSource; 
             parentGrid.Children.Add(logo);
@@ -52,11 +58,11 @@ namespace AirportGUI.GUIModels
             Grid.SetColumn(tBox_Destination, 2);
 
             //
-            // Arrival Time
+            // Departure Time
             //
 
             TextBlock tBox_ArrivalTime = new TextBlock();
-            tBox_ArrivalTime.Text = flight.ArrivalTime.ToString("hh:mm");
+            tBox_ArrivalTime.Text = DateTime.Parse(flight.DepartureTime).ToString("HH:mm");
             tBox_ArrivalTime.Style = Application.Current.TryFindResource("style_FlightDisplayYellow") as Style;
             tBox_ArrivalTime.VerticalAlignment = VerticalAlignment.Center;
             parentGrid.Children.Add(tBox_ArrivalTime);
