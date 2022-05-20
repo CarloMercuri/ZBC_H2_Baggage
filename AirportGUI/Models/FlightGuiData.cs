@@ -1,14 +1,20 @@
-﻿using BagageSortering.Data.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using static System.Net.Mime.MediaTypeNames;
+using System.Windows.Media.Imaging;
 
-namespace BagageSortering.Data.Database.Models
+namespace AirportGUI.Models
 {
-    public class FlightData
+    public class FlightGuiData
     {
-        
+        private BitmapImage companyLogo;
+
+        public BitmapImage CompanyLogo
+        {
+            get { return companyLogo; }
+            set { companyLogo = value; }
+        }
+
         private string flightNumber;
 
         public string FlightNumber
@@ -81,7 +87,5 @@ namespace BagageSortering.Data.Database.Models
             get { return status; }
             set { status = value; }
         }
-
-
     }
 }

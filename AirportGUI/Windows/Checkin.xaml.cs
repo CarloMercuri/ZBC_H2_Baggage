@@ -1,0 +1,54 @@
+﻿using AirportGUI.Data;
+using AirportGUI.Models;
+using BagageSortering.Airportcontrol;
+using BagageSortering.Data.Database.Models;
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+
+namespace AirportGUI.Windows
+{
+    /// <summary>
+    /// Interaction logic for Checkin.xaml
+    /// </summary>
+    public partial class Checkin : Window
+    {
+        AirportManager manager = AirportManager.Instance;
+        Constants constants = new Constants();
+
+        public Checkin()
+        {
+            InitializeComponent();
+            
+            List<FlightData> Flights = manager.GetFlightsList();
+            List<FlightGuiData> FlightGuiDatas = new List<FlightGuiData>();
+            
+            foreach(FlightData flight in Flights)
+            {
+                FlightGuiData gui = new FlightGuiData();
+                gui.ArrivalGate = flight.ArrivalGate;
+                gui.DepartureGate = flight.DepartureGate;
+                gui.ArrivalTime = flight.ArrivalTime;
+                gui.DepartureTime = flight.DepartureTime;
+                gui.FlightNumber = flight.FlightNumber;
+                gui.ArrivalAirportCode = flight.ArrivalAirportCode;
+                gui.DepartureAirportCode = flight.DepartureAirportCode;
+                gui.MaxPassengers = flight.MaxPassengers;
+                gui.Status = flight.Status;
+                gui.CompanyLogo = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, manager.GetAirlineLogo(flight.FlightNumber))));
+                FlightGuiDatas.Add(gui);
+            }
+
+
+            flightsListView.ItemsSource = FlightGuiDatas;
+        }
+    }
+}

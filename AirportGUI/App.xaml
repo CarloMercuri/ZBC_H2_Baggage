@@ -22,7 +22,16 @@
             <Setter Property="BorderBrush" Value="#a6aabd"></Setter>
             <Setter Property="Background" Value="{StaticResource gradient_LightDarkBlue}"></Setter>
         </Style>
-        
+
+        <Style x:Key="style_CheckinDisplayText" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize"
+            Value="18" />
+            <Setter Property="FontWeight"
+             Value="Bold" />
+            <Setter Property="Foreground"
+             Value="Black" />
+        </Style>
+
         <Style x:Key="style_FlightDisplayYellow" TargetType="{x:Type TextBlock}">
             <Setter Property="FontSize"
             Value="20" />
@@ -50,6 +59,19 @@
              Value="White" />
             <Setter Property="FontFamily"
              Value="Baskerville,Georgia" />
+        </Style>
+
+        <Style x:Key="btn_PassiveStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
 
     </Application.Resources>

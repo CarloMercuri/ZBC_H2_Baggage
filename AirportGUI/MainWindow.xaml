@@ -9,8 +9,56 @@
     <!--<Window.Background>
         <ImageBrush ImageSource="Background"></ImageBrush>
     </Window.Background>-->
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="237,131,0,0" VerticalAlignment="Top" Height="51" Width="110" Click="Button_Click"/>
+    <Grid x:Name="mainGrid" Background="#313443">
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="btn_CheckIn" 
+        Style="{StaticResource btn_PassiveStyle}"
+        Grid.Row="0"                
+        Grid.Column="0"
+        Width="Auto" Height="Auto" FontFamily="Verdana"         
+        Background="#313443">
+            <Image Source="Resources/Icons/btn_CheckIn_Normal.png" MouseDown="btn_Check_MouseDown" />
+        </Button>
+
+        <Button x:Name="btn_FlightDisplay"
+        Style="{StaticResource btn_PassiveStyle}"
+        Grid.Row="0"                
+        Grid.Column="1"
+        Width="Auto" Height="Auto" FontFamily="Verdana"         
+        Background="#313443">
+            <Image Source="Resources/Icons/btn_FD_Normal.png" />
+        </Button>
+
+        <Button x:Name="btn_Management" 
+        Style="{StaticResource btn_PassiveStyle}"
+        Grid.Row="1"                
+        Grid.Column="0"
+        Width="Auto" Height="Auto" FontFamily="Verdana"         
+        Background="#313443">
+            <Image Source="Resources/Icons/btn_Management_normal.png" />
+        </Button>
+
+        <Button x:Name="btn_Baggage" 
+        Style="{StaticResource btn_PassiveStyle}"
+        Grid.Row="1"                
+        Grid.Column="1"
+        Width="Auto" Height="Auto" FontFamily="Verdana"         
+        Background="#313443">
+            <Image Source="Resources/Icons/btn_Baggage_Normal.png" />
+        </Button>
+
 
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
 ﻿using AirportGUI.Data;
+using AirportGUI.Windows;
 using BagageSortering.Airportcontrol;
 using BagageSortering.Data.Database.Processing;
 using System;
@@ -35,6 +36,22 @@ namespace AirportGUI
         {
             FlightsDisplayWindow fdw = new FlightsDisplayWindow();
             fdw.Show();
+        }
+
+        private void btn_Check_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Checkin ciw = new Checkin();
+            ciw.Show();
+            Image btn = (Image)sender;
+            btn.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/Icons/btn_CheckIn_Pressed.png"));
+            //btn.Background = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+            
+        }
+
+        private void btn_Check_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Image btn = (Image)sender;
+            btn.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/Icons/btn_CheckIn_Normal.png"));
         }
     }
 }

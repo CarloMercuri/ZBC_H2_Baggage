@@ -8,6 +8,29 @@
 
   <ItemGroup>
     <None Remove="Resources\Background.jpg" />
+    <None Remove="Resources\Checkin.png" />
+    <None Remove="Resources\Icons\AirCanada.png" />
+    <None Remove="Resources\Icons\Alaska.png" />
+    <None Remove="Resources\Icons\Alitalia.jpg" />
+    <None Remove="Resources\Icons\btn_Baggage_normal.png" />
+    <None Remove="Resources\Icons\btn_Baggage_pressed.png" />
+    <None Remove="Resources\Icons\btn_Blank.png" />
+    <None Remove="Resources\Icons\btn_CheckIn_Normal.png" />
+    <None Remove="Resources\Icons\btn_CheckIn_Pressed.png" />
+    <None Remove="Resources\Icons\btn_FD_normal.png" />
+    <None Remove="Resources\Icons\btn_FD_pressed.png" />
+    <None Remove="Resources\Icons\btn_Management_normal.png" />
+    <None Remove="Resources\Icons\btn_Management_pressed.png" />
+    <None Remove="Resources\Icons\Emirates.png" />
+    <None Remove="Resources\Icons\Japan.png" />
+    <None Remove="Resources\Icons\LogoNotFound.png" />
+    <None Remove="Resources\Icons\Lufthansa.png" />
+    <None Remove="Resources\Icons\Qantas.png" />
+    <None Remove="Resources\Icons\Ryanair.png" />
+    <None Remove="Resources\Icons\Sas.png" />
+    <None Remove="Resources\Icons\Turkish.png" />
+    <None Remove="Resources\Icons\United.png" />
+    <None Remove="Resources\Icons\virgin.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,11 +38,30 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\Icons\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Resources\Background.jpg" />
+    <Resource Include="Resources\Checkin.png" />
+    <Resource Include="Resources\Icons\AirCanada.png" />
+    <Resource Include="Resources\Icons\Alaska.png" />
+    <Resource Include="Resources\Icons\Alitalia.jpg" />
+    <Resource Include="Resources\Icons\btn_Baggage_normal.png" />
+    <Resource Include="Resources\Icons\btn_Baggage_pressed.png" />
+    <Resource Include="Resources\Icons\btn_Blank.png" />
+    <Resource Include="Resources\Icons\btn_CheckIn_Normal.png" />
+    <Resource Include="Resources\Icons\btn_CheckIn_Pressed.png" />
+    <Resource Include="Resources\Icons\btn_FD_normal.png" />
+    <Resource Include="Resources\Icons\btn_FD_pressed.png" />
+    <Resource Include="Resources\Icons\btn_Management_normal.png" />
+    <Resource Include="Resources\Icons\btn_Management_pressed.png" />
+    <Resource Include="Resources\Icons\Emirates.png" />
+    <Resource Include="Resources\Icons\Japan.png" />
+    <Resource Include="Resources\Icons\LogoNotFound.png" />
+    <Resource Include="Resources\Icons\Lufthansa.png" />
+    <Resource Include="Resources\Icons\Qantas.png" />
+    <Resource Include="Resources\Icons\Ryanair.png" />
+    <Resource Include="Resources\Icons\Sas.png" />
+    <Resource Include="Resources\Icons\Turkish.png" />
+    <Resource Include="Resources\Icons\United.png" />
+    <Resource Include="Resources\Icons\virgin.png" />
   </ItemGroup>
 
   <ItemGroup>

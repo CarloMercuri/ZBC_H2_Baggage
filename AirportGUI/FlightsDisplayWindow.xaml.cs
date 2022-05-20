@@ -1,4 +1,5 @@
-﻿using AirportGUI.GUIModels;
+﻿using AirportGUI.Data;
+using AirportGUI.GUIModels;
 using BagageSortering.Airportcontrol;
 using BagageSortering.Data.Database.Models;
 using BagageSortering.Data.Database.Processing;
@@ -26,8 +27,8 @@ namespace AirportGUI
             InitializeComponent();
             AirportManager processor = AirportManager.Instance;
 
-
-            List<FlightData> flights = processor.GetUpcomingFlights();
+            Constants constants = new Constants();
+            List<FlightData> flights = processor.GetUpcomingFlights(constants.CurrentTime);
             Console.WriteLine();
 
             for (int i = 0; i < mainGrid.RowDefinitions.Count - 1; i++)

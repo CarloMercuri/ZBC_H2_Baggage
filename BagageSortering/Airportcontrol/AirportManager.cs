@@ -93,11 +93,11 @@ namespace BagageSortering.Airportcontrol
             dataProcessor.AddFlights(flights);
         }
 
-        public List<FlightData> GetUpcomingFlights()
+        public List<FlightData> GetUpcomingFlights(DateTime nowtime)
         {
             List<FlightData> allFlights = dataProcessor.GetFlightsList();
 
-            allFlights.RemoveAll(x => DateTime.Parse(x.DepartureTime) < DateTime.Now);
+            allFlights.RemoveAll(x => DateTime.Parse(x.DepartureTime) < nowtime);
             List<FlightData> orderedList = allFlights.OrderBy(x => DateTime.Parse(x.DepartureTime)).ToList();
 
             return orderedList;
