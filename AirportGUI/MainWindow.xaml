@@ -38,7 +38,7 @@
         Grid.Column="1"
         Width="Auto" Height="Auto" FontFamily="Verdana"         
         Background="#313443">
-            <Image Source="Resources/Icons/btn_FD_Normal.png" />
+            <Image Source="Resources/Icons/btn_FD_Normal.png" MouseDown="btn_FlightDisplay_MouseDown" />
         </Button>
 
         <Button x:Name="btn_Management" 
@@ -47,7 +47,7 @@
         Grid.Column="0"
         Width="Auto" Height="Auto" FontFamily="Verdana"         
         Background="#313443">
-            <Image Source="Resources/Icons/btn_Management_normal.png" />
+            <Image Source="Resources/Icons/btn_Management_normal.png" MouseDown="btn_Management_MouseDown" />
         </Button>
 
         <Button x:Name="btn_Baggage" 

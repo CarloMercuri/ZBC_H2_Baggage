@@ -82,6 +82,8 @@ namespace BagageSortering.Data.Database.Models
             set { status = value; }
         }
 
+        public List<AirplaneSeat> Seats { get; set; }
+
 
     }
 }

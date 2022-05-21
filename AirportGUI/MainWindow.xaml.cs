@@ -28,6 +28,7 @@ namespace AirportGUI
         {
             InitializeComponent();
             AirportManager processor = AirportManager.Instance;
+            //processor.GenerateRandomReservations();
             //Constants constants = new Constants();
             //processor.GenerateFlights(constants.CurrentTime);
         }
@@ -52,6 +53,18 @@ namespace AirportGUI
         {
             Image btn = (Image)sender;
             btn.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/Icons/btn_CheckIn_Normal.png"));
+        }
+
+        private void btn_FlightDisplay_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            FlightsDisplayWindow fdw = new FlightsDisplayWindow();
+            fdw.Show();
+        }
+
+        private void btn_Management_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            FlightInspector fdr = new FlightInspector("AC7719");
+            fdr.Show();
         }
     }
 }

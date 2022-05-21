@@ -31,9 +31,27 @@ namespace BagageSortering.Data.Database.Processing
 
         }
 
+        private void AddFlightSeats()
+        {
+            foreach (FlightData flight in flightsList)
+            {
+                flight.Seats = new List<AirplaneSeat>();
+
+                for (int row = 0; row < 24; row++)
+                {
+                    flight.Seats.Add(new AirplaneSeat($"{row + 1}A"));
+                    flight.Seats.Add(new AirplaneSeat($"{row + 1}B"));
+                    flight.Seats.Add(new AirplaneSeat($"{row + 1}C"));
+                    flight.Seats.Add(new AirplaneSeat($"{row + 1}D"));
+                    flight.Seats.Add(new AirplaneSeat($"{row + 1}E"));
+                    flight.Seats.Add(new AirplaneSeat($"{row + 1}F"));
+                }
+            }
+        }
+
         public List<FlightData> GetFlightsList()
         {
-            return flightsList;
+             return flightsList;
         }
 
         public string GetAirportNameFromCode(string airportCode)
@@ -63,6 +81,16 @@ namespace BagageSortering.Data.Database.Processing
         public List<Airport> GetAirports()
         {
             return airports;
+        }
+
+        public List<Reservation> GetReservations()
+        {
+            return reservations;
+        }
+
+        public List<PassengerReservation> GetPassengerReservations()
+        {
+            return passengerReservations;
         }
 
         public Dictionary<string, int> GetTerminalGates()
@@ -106,26 +134,26 @@ namespace BagageSortering.Data.Database.Processing
             return airlines.Find(x => x.Prefix == prefix);
         }
 
-        private int GetReservationID(int passengerReservationID)
+        private string GetReservationID(string passengerReservationID)
         {
             return passengerReservations.Find(x => x.ReservationID == passengerReservationID).ReservationID;
         }
 
-        private string GetFlightNumber(int reservationID)
+        private string GetFlightNumber(string reservationID)
         {
             return reservations.Find(x => x.ReservationID == reservationID).FlightNumber;
         }
 
-        public int GetBaggageTerminalDestination(int passengerReservationID)
+        public int GetBaggageTerminalDestination(string passengerReservationID)
         {
-            int resID = GetReservationID(passengerReservationID);
+            string resID = GetReservationID(passengerReservationID);
             string flightNr = GetFlightNumber(resID);
             string departureGate = flightsList.Find(x => x.FlightNumber == flightNr).DepartureGate;
             return GetTerminalNumber(departureGate);
 
         }
 
-        public string GetBaggageDestinationCode(int pResID)
+        public string GetBaggageDestinationCode(string pResID)
         {
             return flightsList.Find(x => x.FlightNumber == GetFlightNumber(GetReservationID(pResID))).ArrivalAirportCode;
         }
@@ -152,6 +180,7 @@ namespace BagageSortering.Data.Database.Processing
         {
             airlines = csvHelper.LoadAirlines();
             flightsList = csvHelper.LoadFlightData();
+            AddFlightSeats();
             airports = csvHelper.LoadAirportsData();
             reservations = csvHelper.LoadReservationData();
             passengerReservations = csvHelper.LoadPassengerReservationsData();

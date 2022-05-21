@@ -12,36 +12,39 @@
     <Grid x:Name="mainGrid">
         <Grid.RowDefinitions>
 
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
 
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="58" />
 
         </Grid.ColumnDefinitions>
-        <ListView Name="flightsListView" ItemsSource="{Binding Path=FlightGuiDatas}"  VerticalContentAlignment="Top"  ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <ListView Name="flightsListView" BorderBrush="{StaticResource gradient_CheckInFlights}" BorderThickness="5 5 5 5" Background="#64747a" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" ItemsSource="{Binding Path=FlightGuiDatas}"  VerticalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="10,10,0,0">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="VerticalContentAlignment" Value="Top"/>
+                    <Setter Property="BorderBrush" Value="LightGray" />
+                    <Setter Property="BorderThickness" Value="0,0,0,1" />
                 </Style>
+                
             </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" >
                         <StackPanel.Resources>
-                            <Style TargetType="{x:Type TextBox}">
-                                <Setter Property="Margin" Value="0 0 50 0"/>
-                            </Style>
+
                         </StackPanel.Resources>
-                        <Image Source="{Binding CompanyLogo}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="50" />
-                        <TextBlock Text="{Binding FlightNumber}" Style="{StaticResource style_CheckinDisplayText}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <TextBlock Text="{Binding DepartureAirportCode}" Style="{StaticResource style_CheckinDisplayText}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <TextBlock Text="{Binding ArrivalAirportCode}" Style="{StaticResource style_CheckinDisplayText}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <Image Source="{Binding CompanyLogo}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="20" />
+                        <TextBlock Text="{Binding FlightNumber}" Style="{StaticResource style_CheckinDisplayText}" MinWidth="70" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Text="{Binding DepartureAirportCode}" Style="{StaticResource style_CheckinDisplayText}" MinWidth="50" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Text="{Binding ArrivalAirportCode}" Style="{StaticResource style_CheckinDisplayText}" MinWidth="50" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         <TextBlock Text="{Binding DepartureTime}" Style="{StaticResource style_CheckinDisplayText}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </StackPanel>
                 </DataTemplate>

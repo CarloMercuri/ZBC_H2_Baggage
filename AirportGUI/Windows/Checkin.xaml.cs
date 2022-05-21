@@ -29,10 +29,14 @@ namespace AirportGUI.Windows
             InitializeComponent();
             
             List<FlightData> Flights = manager.GetFlightsList();
+
             List<FlightGuiData> FlightGuiDatas = new List<FlightGuiData>();
             
             foreach(FlightData flight in Flights)
             {
+                // Only allowed to check in flights that are within 3 hours
+                if (DateTime.Parse(flight.DepartureTime) > constants.CurrentTime.AddHours(3)) continue;
+
                 FlightGuiData gui = new FlightGuiData();
                 gui.ArrivalGate = flight.ArrivalGate;
                 gui.DepartureGate = flight.DepartureGate;

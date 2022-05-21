@@ -8,9 +8,9 @@ namespace BagageSortering.Data.Database.Models
     {
         //ReservationID,Name,Surname,MaxLuggage,CheckedLuggage
 
-        private int reservationID;
+        private string reservationID;
 
-        public int ReservationID
+        public string ReservationID
         {
             get { return reservationID; }
             set { reservationID = value; }
@@ -39,6 +39,14 @@ namespace BagageSortering.Data.Database.Models
         {
             get { return checkedLuggage; }
             set { checkedLuggage = value; }
+        }
+
+        private string seatName;
+
+        public string SeatName
+        {
+            get { return seatName; }
+            set { seatName = value; }
         }
 
 

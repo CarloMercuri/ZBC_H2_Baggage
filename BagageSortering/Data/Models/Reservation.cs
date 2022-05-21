@@ -6,9 +6,9 @@ namespace BagageSortering.Data.Database.Models
 {
     public class Reservation
     {
-        private int reservationID;
+        private string reservationID;
 
-        public int ReservationID
+        public string ReservationID
         {
             get { return reservationID; }
             set { reservationID = value; }

@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\airplane_empty.png" />
     <None Remove="Resources\Background.jpg" />
     <None Remove="Resources\Checkin.png" />
     <None Remove="Resources\Icons\AirCanada.png" />
@@ -28,6 +29,9 @@
     <None Remove="Resources\Icons\Qantas.png" />
     <None Remove="Resources\Icons\Ryanair.png" />
     <None Remove="Resources\Icons\Sas.png" />
+    <None Remove="Resources\Icons\seat_Empty.png" />
+    <None Remove="Resources\Icons\seat_Highlight.png" />
+    <None Remove="Resources\Icons\seat_Taken.png" />
     <None Remove="Resources\Icons\Turkish.png" />
     <None Remove="Resources\Icons\United.png" />
     <None Remove="Resources\Icons\virgin.png" />
@@ -38,6 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\airplane_empty.png" />
     <Resource Include="Resources\Background.jpg" />
     <Resource Include="Resources\Checkin.png" />
     <Resource Include="Resources\Icons\AirCanada.png" />
@@ -59,6 +64,9 @@
     <Resource Include="Resources\Icons\Qantas.png" />
     <Resource Include="Resources\Icons\Ryanair.png" />
     <Resource Include="Resources\Icons\Sas.png" />
+    <Resource Include="Resources\Icons\seat_Empty.png" />
+    <Resource Include="Resources\Icons\seat_Highlight.png" />
+    <Resource Include="Resources\Icons\seat_Taken.png" />
     <Resource Include="Resources\Icons\Turkish.png" />
     <Resource Include="Resources\Icons\United.png" />
     <Resource Include="Resources\Icons\virgin.png" />
