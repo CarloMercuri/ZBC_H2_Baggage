@@ -63,8 +63,11 @@ namespace AirportGUI
 
         private void btn_Management_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            FlightInspector fdr = new FlightInspector("AC7719");
-            fdr.Show();
+            //FlightInspector fdr = new FlightInspector("AC7719");
+            //fdr.Show();
+
+            FlightSelection fs = new FlightSelection();
+            fs.Show();
         }
     }
 }

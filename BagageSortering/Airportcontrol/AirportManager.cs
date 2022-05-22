@@ -165,6 +165,11 @@ namespace BagageSortering.Airportcontrol
             return returnList;
         }
 
+        public FlightData GetFlight(string flightNumber)
+        {
+            return dataProcessor.GetFlight(flightNumber);
+        }
+
         public List<AirplaneSeat> GetFlightSeats(string flightNumber)
         {
             List<Reservation> reservations = GetReservationsForFlight(flightNumber);
@@ -175,9 +180,19 @@ namespace BagageSortering.Airportcontrol
                 passengerReservations.AddRange(GetPassengersForReservation(r.ReservationID));
             }
 
+            List<AirplaneSeat> seats = new List<AirplaneSeat>();
+
+            foreach(PassengerReservation r in passengerReservations)
+            {
+                AirplaneSeat seat = new AirplaneSeat(r.SeatName);
+                seat.ReservationID = r.ReservationID;
+                seat.PersonID = r.PassengerID;
+                seats.Add(seat);
+            }
+
             Console.WriteLine();
 
-            return null;
+            return seats;
         }
 
         /// <summary>

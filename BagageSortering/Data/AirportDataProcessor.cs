@@ -31,6 +31,11 @@ namespace BagageSortering.Data.Database.Processing
 
         }
 
+        public FlightData GetFlight(string flightNumber)
+        {
+            return flightsList.Find(x => x.FlightNumber == flightNumber);
+        }
+
         private void AddFlightSeats()
         {
             foreach (FlightData flight in flightsList)

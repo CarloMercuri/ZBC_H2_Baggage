@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AirportGUI"
         mc:Ignorable="d"
-        Title="FlightsDisplayWindow" Height="650" Width="900">
+        Title="FlightsDisplayWindow" Height="650" Width="1280">
     <Border BorderBrush="#333333" BorderThickness="6">
-        <Grid x:Name="mainGrid" Background="#313443">
+        <Grid x:Name="mainGrid" Background="#313443" Width="700">
 
             <!--<Grid.Background>
                     <ImageBrush ImageSource="Resources\bg_full.png"/>
@@ -46,7 +46,7 @@
 
             </Grid.ColumnDefinitions>
 
-
+      
             <Border Grid.Row="0" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
             <Border Grid.Row="1" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
             <Border Grid.Row="2" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
