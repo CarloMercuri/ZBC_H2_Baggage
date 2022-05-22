@@ -10,8 +10,15 @@
         <Grid.RowDefinitions>
 
             <RowDefinition Height="10" />
-            <RowDefinition Height="380"/>
-            <RowDefinition Height="380" />
+            <RowDefinition Height="95"/>
+            <RowDefinition Height="95"/>
+            <RowDefinition Height="95"/>
+            <RowDefinition Height="95"/>
+            <RowDefinition Height="95"/>
+            <RowDefinition Height="95"/>
+            <RowDefinition Height="95"/>
+            <RowDefinition Height="95"/>
+
             <RowDefinition Height="10" />
 
         </Grid.RowDefinitions>
@@ -24,9 +31,9 @@
 
         </Grid.ColumnDefinitions>
 
-        <Image Source="../Resources/airplane_empty.png" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"></Image>
+        <Image Source="../Resources/airplane_empty.png" Grid.Row="1" Grid.Column="1" Grid.RowSpan="8"></Image>
 
-        <Grid x:Name="seatsGrid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Margin="-2 95 0 0" Width="145">
+        <Grid x:Name="seatsGrid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="8" Margin="-2 95 0 0" Width="145">
             <Grid.RowDefinitions>
 
                 <RowDefinition Height="*" />
@@ -72,6 +79,48 @@
                 <ColumnDefinition Width="58" />-->
 
             </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid x:Name="detailsGrid" Grid.Row="1" Grid.Column="2" Grid.RowSpan="8" Margin="0 0 0 0">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+
+                <!--<RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10" />-->
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <!--<ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="58" />-->
+
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="info_Start" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="5" FontSize="24">Select a seat</TextBlock>
+            <TextBlock x:Name="info_Seat" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="5" FontSize="24">Seat:</TextBlock>
+            <TextBlock x:Name="info_Status" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="5" FontSize="24">Status:</TextBlock>
+            <TextBlock x:Name="info_Reservation" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="5" FontSize="24">Reservation:</TextBlock>
+            <TextBlock x:Name="info_Person" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="5" FontSize="24">Person:</TextBlock>
+            <TextBlock x:Name="info_CheckedIn" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="5" FontSize="24">Checked In:</TextBlock>
+            
         </Grid>
     </Grid>
 </Window>

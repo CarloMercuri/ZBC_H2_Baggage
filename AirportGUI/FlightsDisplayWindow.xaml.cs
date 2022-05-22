@@ -1,5 +1,6 @@
 ﻿using AirportGUI.Data;
 using AirportGUI.GUIModels;
+using AirportGUI.Windows;
 using BagageSortering.Airportcontrol;
 using BagageSortering.Data.Database.Models;
 using BagageSortering.Data.Database.Processing;
@@ -22,16 +23,20 @@ namespace AirportGUI
     /// </summary>
     public partial class FlightsDisplayWindow : Window
     {
+        AirportManager processor = AirportManager.Instance;
+
+        Constants constants = new Constants();
         List<Button> selectionButtons = new List<Button>();
+        List<FlightData> flights = new List<FlightData>();
+        int selectedFlight = 0;
 
         public FlightsDisplayWindow()
         {
             InitializeComponent();
-            AirportManager processor = AirportManager.Instance;
 
-            Constants constants = new Constants();
-            List<FlightData> flights = processor.GetUpcomingFlights(constants.CurrentTime);
-            Console.WriteLine();
+            //processor.GenerateRandomReservations();
+
+            flights = processor.GetUpcomingFlights(constants.CurrentTime);
 
             for (int i = 0; i < mainGrid.RowDefinitions.Count - 1; i++)
             {
@@ -49,12 +54,18 @@ namespace AirportGUI
                 btn.Style = style;
                 Grid.SetRow(btn, i + 1);
                 Grid.SetColumn(btn, 0);
-                Grid.SetColumnSpan(btn, 9);
+                Grid.SetColumnSpan(btn, 5);
                 selectionButtons.Add(btn);
                 mainGrid.Children.Add(btn);
             }
 
             Console.WriteLine();
+        }
+
+        private void btn_Seats_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            FlightInspector fdw = new FlightInspector(flights[selectedFlight].FlightNumber);
+            fdw.Show();
         }
 
         private void RowButtonClick(object sender, RoutedEventArgs e)
@@ -67,9 +78,7 @@ namespace AirportGUI
             }
 
             _btn.Background = new SolidColorBrush(Color.FromArgb(100, 200, 200, 0));
-            int _row = (int)_btn.GetValue(Grid.RowProperty);
-            int _column = (int)_btn.GetValue(Grid.ColumnProperty);
-            //MessageBox.Show(string.Format("Button clicked at column {0}, row {1}", _column, _row));
+            selectedFlight = (int)_btn.GetValue(Grid.RowProperty);
         }
     }
 }

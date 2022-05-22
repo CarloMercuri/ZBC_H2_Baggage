@@ -22,16 +22,24 @@ namespace AirportGUI.Windows
     {
         Constants constants = new Constants();
         AirportManager manager = AirportManager.Instance;
-        string selectedSeatIndex = "";
+        FlightData flight;
+        int selectedSeatIndex = 0;
         string emptySeatFileName = "seat_Empty.png";
         string bookedSeatFileName = "seat_Taken.png";
+        AirplaneSeat selectedSeat;
 
         public FlightInspector(string flightNumber)
         {
             InitializeComponent();
 
-            List<AirplaneSeat> rawSeats =  manager.GetFlightSeats("AS4732");
-            FlightData flight = manager.GetFlight(flightNumber);
+            info_Seat.Visibility = Visibility.Hidden;
+            info_Status.Visibility = Visibility.Hidden;
+            info_Reservation.Visibility = Visibility.Hidden;
+            info_Person.Visibility = Visibility.Hidden;
+            info_CheckedIn.Visibility = Visibility.Hidden;
+
+            List<AirplaneSeat> rawSeats =  manager.GetFlightSeats(flightNumber);
+            flight = manager.GetFlight(flightNumber);
 
             foreach (AirplaneSeat seat in rawSeats)
             {
@@ -52,55 +60,107 @@ namespace AirportGUI.Windows
                 {
                     if (seat == 3) continue;
 
-                    Image img = new Image();
+                    Button btn = new Button();
 
                     string imageName = "";
-                    if(flight.Seats[seatIndex].ReservationID == "" || flight.Seats[seatIndex].ReservationID == null)
-                    {
-                        img.Source = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, "seat_Empty.png")));
-                        img.Name = "EmptySeat";
+                    var brush = new ImageBrush();
+                    if (flight.Seats[seatIndex].ReservationID == "" || flight.Seats[seatIndex].ReservationID == null)
+                    {                        
+                        brush.ImageSource = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, "seat_Empty.png")));
+                        btn.Background = brush;
+                        btn.Content = $"Empty:{seatIndex}";
+                        btn.ContentStringFormat = "\n\r id={0}";
                     }
                     else
                     {
-                        img.Source = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, "seat_Taken.png")));
-                        img.Name = "TakenSeat";
+                        brush.ImageSource = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, "seat_Taken.png")));
+                        btn.Background = brush;
+                        btn.Content = $"Taken:{seatIndex}";
+                        btn.ContentStringFormat = "\n\r id={0}";
                     }
                     
                     
-                    img.MouseEnter += Img_MouseEnter;
-                    img.MouseLeave += Img_MouseLeave;
-                    Grid.SetRow(img, row);
-                    Grid.SetColumn(img, seat);
-                    seatsGrid.Children.Add(img);
+                    btn.MouseEnter += Btn_MouseEnter;
+                    btn.MouseLeave += Btn_MouseLeave;
+                    btn.Click += Btn_Click;
+
+                    Grid.SetRow(btn, row);
+                    Grid.SetColumn(btn, seat);
+                    seatsGrid.Children.Add(btn);
 
                     seatIndex++;
                 }
             }
         }
 
-        private void Img_MouseLeave(object sender, MouseEventArgs e)
+        private void UpdateInfo()
         {
-            Image img = (Image)sender;
-            if(img.Name == "EmptySeat")
+            AirplaneSeat seat = flight.Seats[selectedSeatIndex];
+            info_Seat.Text = $"Seat: {seat.SeatName}";
+            info_Status.Visibility = Visibility.Visible;            
+            info_Start.Visibility = Visibility.Hidden;
+
+            if(seat.ReservationID == "" || seat.ReservationID is null)
             {
-                img.Source = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, "seat_Empty.png")));
+                info_Status.Text = "Status: Not Booked";
+                info_Person.Visibility = Visibility.Hidden;                
+                info_CheckedIn.Visibility = Visibility.Hidden;
+                info_Reservation.Visibility = Visibility.Hidden;
             }
             else
             {
-                img.Source = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, "seat_Taken.png")));
+                info_Status.Text = "Status: Booked";
+                info_Person.Visibility = Visibility.Visible;
+                info_CheckedIn.Visibility = Visibility.Visible;
+                info_Reservation.Visibility = Visibility.Visible;
+                info_Reservation.Text = $"Reservation: {seat.ReservationID}";
+                Passenger passenger = manager.GetPassenger(seat.PersonID);
+                info_Person.Text = "Person: " +  passenger.FirstName + " " + passenger.LastName;
+            }
+        }
+
+        private void Btn_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            selectedSeatIndex = Convert.ToInt32(btn.Content.ToString().Substring(btn.Content.ToString().IndexOf(':') + 1));
+            UpdateInfo();
+            //string s = btn.Content.ToString().Substring(btn.Content.ToString().IndexOf(':') + 1);
+        }
+
+
+        private void Btn_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if(btn.Content.ToString().Contains("Empty"))
+            {
+                var brush = new ImageBrush();
+                brush.ImageSource = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, "seat_Empty.png")));
+                btn.Background = brush;
+            }
+            else
+            {
+                var brush = new ImageBrush();
+                brush.ImageSource = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, "seat_Taken.png")));
+                btn.Background = brush;
             }            
         }
 
-        private void Img_MouseEnter(object sender, MouseEventArgs e)
+        private void Btn_MouseEnter(object sender, MouseEventArgs e)
         {
-            Image img = (Image)sender;
-            if (img.Name == "EmptySeat")
+            Button btn = (Button)sender;
+
+            if (btn.Content.ToString().Contains("Empty"))
             {
-                img.Source = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, "seat_Highlight.png")));
+                var brush = new ImageBrush();
+                brush.ImageSource = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, "seat_Highlight.png")));
+                btn.Background = brush;
             }
             else
             {
-                img.Source = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, "seat_Taken_Highlight.png")));
+                var brush = new ImageBrush();
+                brush.ImageSource = new BitmapImage(new Uri(Path.Combine(constants.IconsFolderPath, "seat_Taken_Highlight.png")));
+                btn.Background = brush;
             }
         }
     }

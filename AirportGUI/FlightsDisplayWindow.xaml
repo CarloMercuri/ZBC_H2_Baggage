@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AirportGUI"
         mc:Ignorable="d"
-        Title="FlightsDisplayWindow" Height="650" Width="1280">
+        Title="FlightsDisplayWindow" Height="650" Width="1280" Background="#404352">
     <Border BorderBrush="#333333" BorderThickness="6">
-        <Grid x:Name="mainGrid" Background="#313443" Width="700">
+        <Grid x:Name="mainGrid" HorizontalAlignment="Right" Margin="0,0,200,0">
 
             <!--<Grid.Background>
                     <ImageBrush ImageSource="Resources\bg_full.png"/>
@@ -37,31 +37,39 @@
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.40*" />
-                <ColumnDefinition Width="0.40*" />
-                <ColumnDefinition Width="200" />
-                <ColumnDefinition Width="0.20*" />
-                <ColumnDefinition Width="0.15*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="240" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+
+
 
             </Grid.ColumnDefinitions>
 
+            <Button Grid.Row="2" Grid.Column="6" Grid.RowSpan="2" Style="{StaticResource NoMouseOverButton}" Grid.ColumnSpan="2">
+                <Image Source="Resources/Icons/btn_FlightInspector.png" MouseDown="btn_Seats_MouseDown" />
+            </Button>
       
-            <Border Grid.Row="0" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="1" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="2" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="3" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="4" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="5" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="6" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="7" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="8" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="9" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="10" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="11" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="12" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="13" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
-            <Border Grid.Row="14" Grid.ColumnSpan="8" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="0" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="1" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="2" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="3" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="4" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="5" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="6" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="7" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="8" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="9" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="10" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="11" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="12" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="13" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
+            <Border Grid.Row="14" Grid.ColumnSpan="5" Style="{StaticResource border_FlightDisplay}"></Border>
 
 
             <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource style_FlightDisplayColumnTitle}">Airline</TextBlock>
@@ -69,13 +77,12 @@
             <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">Destination</TextBlock>
             <TextBlock Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">ETD</TextBlock>
             <TextBlock Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">Gate</TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayColumnTitle}">    Status</TextBlock>
 
             <!--<TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayYellow}">UJSHR</TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayWhite}">VANCOUVER</TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayYellow}">11:25</TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource style_FlightDisplayWhite}">20</TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource style_FlightDisplayYellow}">GATE OPENS 11.30</TextBlock>-->
-        </Grid>
+        </Grid>        
     </Border>
 </Window>

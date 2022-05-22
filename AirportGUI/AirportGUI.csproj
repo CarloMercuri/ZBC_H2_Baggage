@@ -20,6 +20,7 @@
     <None Remove="Resources\Icons\btn_CheckIn_Pressed.png" />
     <None Remove="Resources\Icons\btn_FD_normal.png" />
     <None Remove="Resources\Icons\btn_FD_pressed.png" />
+    <None Remove="Resources\Icons\btn_FlightInspector.png" />
     <None Remove="Resources\Icons\btn_Management_normal.png" />
     <None Remove="Resources\Icons\btn_Management_pressed.png" />
     <None Remove="Resources\Icons\Emirates.png" />
@@ -55,6 +56,7 @@
     <Resource Include="Resources\Icons\btn_CheckIn_Pressed.png" />
     <Resource Include="Resources\Icons\btn_FD_normal.png" />
     <Resource Include="Resources\Icons\btn_FD_pressed.png" />
+    <Resource Include="Resources\Icons\btn_FlightInspector.png" />
     <Resource Include="Resources\Icons\btn_Management_normal.png" />
     <Resource Include="Resources\Icons\btn_Management_pressed.png" />
     <Resource Include="Resources\Icons\Emirates.png" />

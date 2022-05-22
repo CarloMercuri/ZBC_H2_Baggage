@@ -14,6 +14,8 @@ namespace AirportGUI.GUIModels
 {
     public class FlightDataDisplay
     {
+        AirportManager manager = AirportManager.Instance;
+
         public FlightDataDisplay(FlightData flight, Grid parentGrid, int row)
         {
             Constants constants = new Constants();
@@ -50,7 +52,7 @@ namespace AirportGUI.GUIModels
             //
 
             TextBlock tBox_Destination = new TextBlock();
-            tBox_Destination.Text = flight.ArrivalAirportCode;
+            tBox_Destination.Text = manager.GetAirportName(flight.ArrivalAirportCode);
             tBox_Destination.Style = Application.Current.TryFindResource("style_FlightDisplayWhite") as Style;
             tBox_Destination.VerticalAlignment = VerticalAlignment.Center;
             parentGrid.Children.Add(tBox_Destination);

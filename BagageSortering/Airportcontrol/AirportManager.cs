@@ -93,6 +93,16 @@ namespace BagageSortering.Airportcontrol
             dataProcessor.AddFlights(flights);
         }
 
+        public Passenger GetPassenger(int personID)
+        {
+            return dataProcessor.GetPassenger(personID);
+        }
+
+        public string GetAirportName(string code)
+        {
+            return dataProcessor.GetAirportNameFromCode(code);
+        }
+
         public List<FlightData> GetUpcomingFlights(DateTime nowtime)
         {
             List<FlightData> allFlights = dataProcessor.GetFlightsList();
@@ -212,15 +222,17 @@ namespace BagageSortering.Airportcontrol
         {
             Random rand = new Random();
             List<PassengerReservation> pReservations = new List<PassengerReservation>();
-            List<int> usedPassengersIDs = new List<int>();
+            
             List<Reservation> reservationsFinal = new List<Reservation>();
             List<Reservation> flightReservations = new List<Reservation>();
-            int passengerIndex = 0;
+
             List<FlightData> flightsList = dataProcessor.GetFlightsList();
 
             foreach (FlightData flight in flightsList)
             {
+                List<int> usedPassengersIDs = new List<int>();
                 int seatIndex = 0;
+                int passengerIndex = 0;
                 flightReservations.Clear();
 
                 // Generate a Reservations count, to allow families to group up under the same reservation

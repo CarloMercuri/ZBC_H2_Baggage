@@ -1,258 +1,258 @@
 ﻿AirportName,Country,AirportCode
-Vienna Airport,Austria,VIE
-Baku Airport,Azerbaijan,GYD
-Minsk Airport,Belarus,MSQ
-Antwerp Airport,Belgium,ANR
-Brussels Airport,Belgium,BRU
-Charleroi Airport,Belgium,CRL
-Liege Airport,Belgium,LGG
-Ostend Bruges Airport,Belgium,OST
-Sarajevo Airport,Bosnia and Herzegovina,SJJ
-Tuzla Airport,Bosnia and Herzegovina,TZL
-Burgas Airport,Bulgaria,BOJ
-Sofia Airport,Bulgaria,SOF
-Varna Airport,Bulgaria,VAR
-Dubrovnik Airport,Croatia,DBV
-Pula Airport,Croatia,PUY
-Split Airport,Croatia,SPU
-Zadar Airport,Croatia,ZAD
-Zagreb Airport,Croatia,ZAG
-Larnaca Airport,Cyprus,LCA
-Paphos Airport,Cyprus,PFO
-Brno Airport,Czech Republic,BRQ
-Prague Airport,Czech Republic,PRG
-Aalborg Airport,Denmark,AAL
-Aarhus Airport,Denmark,AAR
-Billund Airport,Denmark,BLL
-Copenhagen Airport,Denmark,CPH
-Vágar Airport,Denmark,FAE,
-Tallinn Airport,Estonia,TLL
-Helsinki Airport,Finland,HEL
-Oulu Airport,Finland,OUL
-Rovaniemi Airport,Finland,RVN
-Tampere Airport,Finland,TMP
-Turku Airport,Finland,TKU
-Vaasa Airport,Finland,VAA
-Ajaccio Airport,France,AJA
-Bastia Airport,France,BIA
-Bergerac Airport,France,EGC,LFBE
-Biarritz Airport,France,BIQ,LFBZ
-Bordeaux Airport,France,BOD,LFBD
-Brest Bretagne Airport,France,BES,LFRB
-Figari South Corsica Airport,France,FSC,LFKF
-Lille Airport,France,LIL,LFQQ
-Lyon-Saint Exupéry Airport,France,LYS,LFLL
-Marseille Airport,France,MRS,LFML
-Montpellier Airport,France,MPL,LFMT
-Nantes Airport,France,NTE,LFRS
-Nice Airport,France,NCE,LFMN
-Paris Beauvais Airport,France,BVA,LFOB
-Paris Charles de Gaulle Airport,France,CDG,LFPG
-Paris Orly Airport,France,ORY,LFPO
-Strasbourg Airport,France,SXB,LFST
-Rennes Bretagne Airport,France,RNS,LFRN
-Réunion Roland Garros Airport,France,RUN,FMEE
-Toulon-Hyères Airport,France,TLN,LFTH
-Toulouse Blagnac Airport,France,TLS,LFBO
-Kutaisi Airport,Georgia,KUT,UGKO
-Tbilisi Airport,Georgia,TBS,UGTB
-Allgäu Airport Memmingen,Germany,FMM,EDJA
-Berlin Brandenburg Airport,Germany,BER,EDDB
-Berlin Schönefeld Airport,Germany,SXF,EDDB
-Berlin Tegel Airport,Germany,TXL,EDDT
-Bremen Airport,Germany,BRE,EDDW
-Cologne Bonn Airport,Germany,CGN,EDDK
-Dortmund Airport,Germany,DTM,EDLW
-Dresden Airport,Germany,DRS,EDDC
-Düsseldorf Airport,Germany,DUS,EDDL
-Frankfurt Airport,Germany,FRA,EDDF
-Frankfurt-Hahn Airport,Germany,HHN,EDFH
-Friedrichshafen Airport,Germany,FDH,EDNY
-Hamburg Airport,Germany,HAM,EDDH
-Hanover Airport,Germany,HAJ,EDDV
-Karlsruhe Baden-Baden Airport,Germany,FKB,EDSB
-Leipzig Halle Airport,Germany,LEJ,EDDP
-Munich Airport,Germany,MUC,EDDM
-Münster Osnabrück Airport,Germany,FMO,EDDG
-Nuremberg Airport,Germany,NUE,EDDN
-Paderborn Lippstadt Airport,Germany,PAD,EDLP
-Stuttgart Airport,Germany,STR,EDDS
-Weeze Airport,Germany,NRN,EDLV
-Athens Airport,Greece,ATH,LGAV
-Chania Airport,Greece,CHQ,LGSA
-Corfu Airport,Greece,CFU,LGKR
-Heraklion Airport,Greece,HER,LGIR
-Kos Airport,Greece,KGS,LGKO
-Mykonos Airport,Greece,JMK,LGMK
-Rhodes Airport,Greece,RHO,LGRP
-Santorini Airport,Greece,JTR,LGSR
-Thessaloniki Airport,Greece,SKG,LGTS
-Zante Airport,Greece,ZTH,LGZA
-Budapest Airport,Hungary,BUD,LHBP
-Debrecen Airport,Hungary,DEB,LHDC
-Keflavik Airport,Iceland,KEF,BIKF
-Cork Airport,Ireland,ORK,EICK
-Dublin Airport,Ireland,DUB,EIDW
-Ireland West Airport Knock,Ireland,NOC,EIKN
-Kerry Airport,Ireland,KIR,EIKY
-Shannon Airport,Ireland,SNN,EINN
-Alghero Airport,Italy,AHO,LIEA
-Ancona Airport,Italy,AOI,LIPY
-Bari Airport,Italy,BRI,LIBD
-Bergamo Airport,Italy,BGY,LIME
-Bologna Airport,Italy,BLQ,LIPE
-Brindisi Airport,Italy,BDS,LIBR
-Cagliari Airport,Italy,CAG,LIEE
-Catania Fontanarossa Airport,Italy,CTA,LICC
-Comiso Airport,Italy,CIY,LICB
-Florence Airport,Italy,FLR,LIRQ
-Genoa Airport,Italy,GOA,LIMJ
-Lamezia Terme Airport,Italy,SUF,LICA
-Milan Linate Airport,Italy,LIN,LIML
-Milan Malpensa Airport,Italy,MXP,LIMC
-Naples Airport,Italy,NAP,LIRN
-Olbia Costa Smeralda Airport,Italy,OLB,LIEO
-Palermo Airport,Italy,PMO,LICJ
-Perugia Airport,Italy,PEG,LIRZ
-Pescara Airport,Italy,PSR,LIBP
-Pisa Airport,Italy,PSA,LIRP
-Rome Ciampino Airport,Italy,CIA,LIRA
-Rome Fiumicino Airport,Italy,FCO,LIRF
-Trapani Airport,Italy,TPS,LICT
-Treviso Airport,Italy,TSF,LIPH
-Turin Airport,Italy,TRN,LIMF
-Venice Airport,Italy,VCE,LIPZ
-Verona Airport,Italy,VRN,LIPX
-Almaty Airport,Kazakhstan,ALA,UAAA
-Astana Airport,Kazakhstan,TSE,UACC
-Pristina Airport,Kosovo,PRN,BKPR
-Riga Airport,Latvia,RIX,EVRA
-Kaunas Airport,Lithuania,KUN,EYKA
-Vilnius Airport,Lithuania,VNO,EYVI
-Luxembourg Airport,Luxembourg,LUX,ELLX
-Malta Airport,Malta,MLA,LMML
-Chisinau Airport,Moldova,KIV,LUKK
-Podgorica Airport,Montenegro,TGD,LYPG
-Tivat Airport,Montenegro,TIV,LYTV
-Amsterdam Airport Schiphol,Netherlands,AMS,EHAM
-Eindhoven Airport,Netherlands,EIN,EHEH
-Groningen Airport Eelde,Netherlands,GRQ,EHGG
-Maastricht Aachen Airport,Netherlands,MST,EHBK
-Rotterdam The Hague Airport,Netherlands,RTM,EHRD
-Skopje Airport,North Macedonia,SKP,LWSK
-Ålesund Airport,Norway,AES,ENAL
-Bergen Airport,Norway,BGO,ENBR
-Bodø Airport,Norway,BOO,ENBO
-Haugesund Airport,Norway,HAU,ENHD
-Kristiansand Airport,Norway,KRS,ENCN
-Oslo Airport,Norway,OSL,ENGM
-Sandefjord Airport Torp,Norway,TRF,ENTO
-Stavanger Airport,Norway,SVG,ENZV
-Tromsø Airport,Norway,TOS,ENTC
-Trondheim Airport,Norway,TRD,ENVA
-Gdansk Airport,Poland,GDN,EPGD
-Katowice Airport,Poland,KTW,EPKT
-Kraków Airport,Poland,KRK,EPKK
-Poznan Airport,Poland,POZ,EPPO
-Szczecin-Goleniów Airport,Poland,SZZ,EPSC
-Warsaw Airport,Poland,WAW,EPWA
-Warsaw Modlin Airport,Poland,WMI,EPMO
-Wroclaw Airport,Poland,WRO,EPWR
-Faro Airport,Portugal,FAO,LPFR
-Lisbon Airport,Portugal,LIS,LPPT
-Madeira Airport,Portugal,FNC,LPMA
-Ponta Delgada Airport,Portugal,PDL,LPPD
-Porto Airport,Portugal,OPO,LPPR
-Bucharest Henri Coanda Airport,Romania,OTP,LROP
-Cluj-Napoca Airport,Romania,CLJ,LRCL
-Iasi Airport,Romania,IAS,LRIA
-Timisoara Airport,Romania,TSR,LRTR
-Koltsovo Airport,Russia,SVX,USSS
-Krasnodar Airport,Russia,KRR,URKK
-Moscow Domodedovo Airport,Russia,DME,UUDD
-Moscow Sheremetyevo Airport,Russia,SVO,UUEE
-Moscow Vnukovo Airport,Russia,VKO,UUWW
-Moscow Zhukovsky Airport,Russia,ZIA,UUBW
-Novosibirsk Tolmachevo Airport,Russia,OVB,UNNT
-Saint Petersburg Pulkovo Airport,Russia,LED,ULLI
-Sochi Airport,Russia,AER,URSS
-Belgrade Nikola Tesla Airport,Serbia,BEG,LYBE
-Niš Airport,Serbia,INI,LYNI
-Bratislava Airport,Slovakia,BTS,LZIB
-Košice Airport,Slovakia,KSC,LZKZ
-Ljubljana Airport,Slovenia,LJU,LJLJ
-Alicante Airport,Spain,ALC,LEAL
-Almeria Airport,Spain,LEI,LEAM
-Asturias Airport,Spain,OVD,LEAS
-Barcelona Airport,Spain,BCN,LEBL
-Bilbao Airport,Spain,BIO,LEBB
-Fuerteventura Airport,Spain,FUE,GCFV
-Girona Airport,Spain,GRO,LEGE
-Gran Canaria Airport,Spain,LPA,GCLP
-Granada-Jaén Airport,Spain,GRX,LEGR
-Ibiza Airport,Spain,IBZ,LEIB
-Jerez Airport,Spain,XRY,LEJR
-La Palma Airport,Spain,SPC,GCLA
-Lanzarote Airport,Spain,ACE,GCRR
-Madrid Barajas Airport,Spain,MAD,LEMD
-Malaga Airport,Spain,AGP,LEMG
-Menorca Airport,Spain,MAH,LEMH
-Palma de Mallorca Airport,Spain,PMI,LEPA
-Región de Murcia Airport,Spain,RMU,LEMI
-Reus Airport,Spain,REU,LERS
-Santander Airport,Spain,SDR,LEXJ
-Santiago de Compostela Airport,Spain,SCQ,LEST
-Seville Airport,Spain,SVQ,LEZL
-Tenerife North Airport,Spain,TFN,GCXO
-Tenerife South Airport,Spain,TFS,GCTS
-Valencia Airport,Spain,VLC,LEVC
-Zaragoza Airport,Spain,ZAZ,LEZG
-Gothenburg Landvetter Airport,Sweden,GOT,ESGG
-Malmö Airport,Sweden,MMX,ESMS
-Stockholm Arlanda Airport,Sweden,ARN,ESSA
-Stockholm Bromma Airport,Sweden,BMA,ESSB
-Stockholm Skavsta Airport,Sweden,NYO,ESKN
-Stockholm Västerås Airport,Sweden,VST,ESOW
-Basel Mulhouse Freiburg Airport,Switzerland,BSL,LFSB
-Bern Airport,Switzerland,BRN,LSZB
-Geneva Airport,Switzerland,GVA,LSGG
-Zurich Airport,Switzerland,ZRH,LSZH
-Adana Airport,Turkey,ADA,LTAF
-Ankara Esenboga Airport,Turkey,ESB,LTAC
-Antalya Airport,Turkey,AYT,LTAI
-Dalaman Airport,Turkey,DLM,LTBS
-Istanbul New Airport,Turkey,IST,LTFM
-Istanbul Sabiha Gökcen Airport,Turkey,SAW,LTFJ
-Izmir Adnan Menderes Airport,Turkey,ADB,LTBJ
-Milas-Bodrum Airport,Turkey,BJV,LTFE
-Trabzon Airport,Turkey,TZX,LTCG
-Kharkiv Airport,Ukraine,HRK,UKHH
-Kiev Boryspil Airport,Ukraine,KBP,UKBB
-Kiev Zhuliany Airport,Ukraine,IEV,UKKK
-Lviv Airport,Ukraine,LWO,UKLL
-Odessa Airport,Ukraine,ODS,UKOO
-Aberdeen Airport,United Kingdom,ABZ,EGPD
-Belfast City Airport,United Kingdom,BHD,EGAC
-Belfast International Airport,United Kingdom,BFS,EGAA
-Birmingham Airport,United Kingdom,BHX,EGBB
-Bristol Airport,United Kingdom,BRS,EGGD
-Cardiff Airport,United Kingdom,CWL,EGFF
-Doncaster Sheffield Airport,United Kingdom,DSA,EGCN
-East Midlands Airport,United Kingdom,EMA,EGNX
-Edinburgh Airport,United Kingdom,EDI,EGPH
-Exeter Airport,United Kingdom,EXT,EGTE
-Glasgow Airport,United Kingdom,GLA,EGPF
-Glasgow Prestwick Airport,United Kingdom,PIK,EGPK
-Humberside Airport,United Kingdom,HUY,EGNJ
-Jersey Airport,United Kingdom,JER,EGJJ
-Leeds Bradford Airport,United Kingdom,LBA,EGNM
-Liverpool Airport,United Kingdom,LPL,EGGP
-London City Airport,United Kingdom,LCY,EGLC
-London Gatwick Airport,United Kingdom,LGW,EGKK
-London Heathrow Airport,United Kingdom,LHR,EGLL
-London Luton Airport,United Kingdom,LTN,EGGW
-London Southend Airport,United Kingdom,SEN,EGMC
-London Stansted Airport,United Kingdom,STN,EGSS
-Manchester Airport,United Kingdom,MAN,EGCC
-Newcastle Airport,United Kingdom,NCL,EGNT
-Southampton Airport,United Kingdom,SOU,EGHI
+Vienna,Austria,VIE
+Baku,Azerbaijan,GYD
+Minsk,Belarus,MSQ
+Antwerp,Belgium,ANR
+Brussels,Belgium,BRU
+Charleroi,Belgium,CRL
+Liege,Belgium,LGG
+Ostend Bruges,Belgium,OST
+Sarajevo,Bosnia and Herzegovina,SJJ
+Tuzla,Bosnia and Herzegovina,TZL
+Burgas,Bulgaria,BOJ
+Sofia,Bulgaria,SOF
+Varna,Bulgaria,VAR
+Dubrovnik,Croatia,DBV
+Pula,Croatia,PUY
+Split,Croatia,SPU
+Zadar,Croatia,ZAD
+Zagreb,Croatia,ZAG
+Larnaca,Cyprus,LCA
+Paphos,Cyprus,PFO
+Brno,Czech Republic,BRQ
+Prague,Czech Republic,PRG
+Aalborg,Denmark,AAL
+Aarhus,Denmark,AAR
+Billund,Denmark,BLL
+Copenhagen,Denmark,CPH
+Vágar,Denmark,FAE,
+Tallinn,Estonia,TLL
+Helsinki,Finland,HEL
+Oulu,Finland,OUL
+Rovaniemi,Finland,RVN
+Tampere,Finland,TMP
+Turku,Finland,TKU
+Vaasa,Finland,VAA
+Ajaccio,France,AJA
+Bastia,France,BIA
+Bergerac,France,EGC,LFBE
+Biarritz,France,BIQ,LFBZ
+Bordeaux,France,BOD,LFBD
+Brest Bretagne,France,BES,LFRB
+Figari South Corsica,France,FSC,LFKF
+Lille,France,LIL,LFQQ
+Lyon-Saint Exupéry,France,LYS,LFLL
+Marseille,France,MRS,LFML
+Montpellier,France,MPL,LFMT
+Nantes,France,NTE,LFRS
+Nice,France,NCE,LFMN
+Paris Beauvais,France,BVA,LFOB
+Paris Charles de Gaulle,France,CDG,LFPG
+Paris Orly,France,ORY,LFPO
+Strasbourg,France,SXB,LFST
+Rennes Bretagne,France,RNS,LFRN
+Réunion Roland Garros,France,RUN,FMEE
+Toulon-Hyères,France,TLN,LFTH
+Toulouse Blagnac,France,TLS,LFBO
+Kutaisi,Georgia,KUT,UGKO
+Tbilisi,Georgia,TBS,UGTB
+Allgäu Memmingen,Germany,FMM,EDJA
+Berlin Brandenburg,Germany,BER,EDDB
+Berlin Schönefeld,Germany,SXF,EDDB
+Berlin Tegel,Germany,TXL,EDDT
+Bremen,Germany,BRE,EDDW
+Cologne Bonn,Germany,CGN,EDDK
+Dortmund,Germany,DTM,EDLW
+Dresden,Germany,DRS,EDDC
+Düsseldorf,Germany,DUS,EDDL
+Frankfurt,Germany,FRA,EDDF
+Frankfurt-Hahn,Germany,HHN,EDFH
+Friedrichshafen,Germany,FDH,EDNY
+Hamburg,Germany,HAM,EDDH
+Hanover,Germany,HAJ,EDDV
+Karlsruhe Baden-Baden,Germany,FKB,EDSB
+Leipzig Halle,Germany,LEJ,EDDP
+Munich,Germany,MUC,EDDM
+Münster Osnabrück,Germany,FMO,EDDG
+Nuremberg,Germany,NUE,EDDN
+Paderborn Lippstadt,Germany,PAD,EDLP
+Stuttgart,Germany,STR,EDDS
+Weeze,Germany,NRN,EDLV
+Athens,Greece,ATH,LGAV
+Chania,Greece,CHQ,LGSA
+Corfu,Greece,CFU,LGKR
+Heraklion,Greece,HER,LGIR
+Kos,Greece,KGS,LGKO
+Mykonos,Greece,JMK,LGMK
+Rhodes,Greece,RHO,LGRP
+Santorini,Greece,JTR,LGSR
+Thessaloniki,Greece,SKG,LGTS
+Zante,Greece,ZTH,LGZA
+Budapest,Hungary,BUD,LHBP
+Debrecen,Hungary,DEB,LHDC
+Keflavik,Iceland,KEF,BIKF
+Cork,Ireland,ORK,EICK
+Dublin,Ireland,DUB,EIDW
+Ireland West Knock,Ireland,NOC,EIKN
+Kerry,Ireland,KIR,EIKY
+Shannon,Ireland,SNN,EINN
+Alghero,Italy,AHO,LIEA
+Ancona,Italy,AOI,LIPY
+Bari,Italy,BRI,LIBD
+Bergamo,Italy,BGY,LIME
+Bologna,Italy,BLQ,LIPE
+Brindisi,Italy,BDS,LIBR
+Cagliari,Italy,CAG,LIEE
+Catania Fontanarossa,Italy,CTA,LICC
+Comiso,Italy,CIY,LICB
+Florence,Italy,FLR,LIRQ
+Genoa,Italy,GOA,LIMJ
+Lamezia Terme,Italy,SUF,LICA
+Milan Linate,Italy,LIN,LIML
+Milan Malpensa,Italy,MXP,LIMC
+Naples,Italy,NAP,LIRN
+Olbia Costa Smeralda,Italy,OLB,LIEO
+Palermo,Italy,PMO,LICJ
+Perugia,Italy,PEG,LIRZ
+Pescara,Italy,PSR,LIBP
+Pisa,Italy,PSA,LIRP
+Rome Ciampino,Italy,CIA,LIRA
+Rome Fiumicino,Italy,FCO,LIRF
+Trapani,Italy,TPS,LICT
+Treviso,Italy,TSF,LIPH
+Turin,Italy,TRN,LIMF
+Venice,Italy,VCE,LIPZ
+Verona,Italy,VRN,LIPX
+Almaty,Kazakhstan,ALA,UAAA
+Astana,Kazakhstan,TSE,UACC
+Pristina,Kosovo,PRN,BKPR
+Riga,Latvia,RIX,EVRA
+Kaunas,Lithuania,KUN,EYKA
+Vilnius,Lithuania,VNO,EYVI
+Luxembourg,Luxembourg,LUX,ELLX
+Malta,Malta,MLA,LMML
+Chisinau,Moldova,KIV,LUKK
+Podgorica,Montenegro,TGD,LYPG
+Tivat,Montenegro,TIV,LYTV
+Amsterdam Schiphol,Netherlands,AMS,EHAM
+Eindhoven,Netherlands,EIN,EHEH
+Groningen Eelde,Netherlands,GRQ,EHGG
+Maastricht Aachen,Netherlands,MST,EHBK
+Rotterdam The Hague,Netherlands,RTM,EHRD
+Skopje,North Macedonia,SKP,LWSK
+Ålesund,Norway,AES,ENAL
+Bergen,Norway,BGO,ENBR
+Bodø,Norway,BOO,ENBO
+Haugesund,Norway,HAU,ENHD
+Kristiansand,Norway,KRS,ENCN
+Oslo,Norway,OSL,ENGM
+Sandefjord Torp,Norway,TRF,ENTO
+Stavanger,Norway,SVG,ENZV
+Tromsø,Norway,TOS,ENTC
+Trondheim,Norway,TRD,ENVA
+Gdansk,Poland,GDN,EPGD
+Katowice,Poland,KTW,EPKT
+Kraków,Poland,KRK,EPKK
+Poznan,Poland,POZ,EPPO
+Szczecin-Goleniów,Poland,SZZ,EPSC
+Warsaw,Poland,WAW,EPWA
+Warsaw Modlin,Poland,WMI,EPMO
+Wroclaw,Poland,WRO,EPWR
+Faro,Portugal,FAO,LPFR
+Lisbon,Portugal,LIS,LPPT
+Madeira,Portugal,FNC,LPMA
+Ponta Delgada,Portugal,PDL,LPPD
+Porto,Portugal,OPO,LPPR
+Bucharest Henri Coanda,Romania,OTP,LROP
+Cluj-Napoca,Romania,CLJ,LRCL
+Iasi,Romania,IAS,LRIA
+Timisoara,Romania,TSR,LRTR
+Koltsovo,Russia,SVX,USSS
+Krasnodar,Russia,KRR,URKK
+Moscow Domodedovo,Russia,DME,UUDD
+Moscow Sheremetyevo,Russia,SVO,UUEE
+Moscow Vnukovo,Russia,VKO,UUWW
+Moscow Zhukovsky,Russia,ZIA,UUBW
+Novosibirsk Tolmachevo,Russia,OVB,UNNT
+Saint Petersburg Pulkovo,Russia,LED,ULLI
+Sochi,Russia,AER,URSS
+Belgrade Nikola Tesla,Serbia,BEG,LYBE
+Niš,Serbia,INI,LYNI
+Bratislava,Slovakia,BTS,LZIB
+Košice,Slovakia,KSC,LZKZ
+Ljubljana,Slovenia,LJU,LJLJ
+Alicante,Spain,ALC,LEAL
+Almeria,Spain,LEI,LEAM
+Asturias,Spain,OVD,LEAS
+Barcelona,Spain,BCN,LEBL
+Bilbao,Spain,BIO,LEBB
+Fuerteventura,Spain,FUE,GCFV
+Girona,Spain,GRO,LEGE
+Gran Canaria,Spain,LPA,GCLP
+Granada-Jaén,Spain,GRX,LEGR
+Ibiza,Spain,IBZ,LEIB
+Jerez,Spain,XRY,LEJR
+La Palma,Spain,SPC,GCLA
+Lanzarote,Spain,ACE,GCRR
+Madrid Barajas,Spain,MAD,LEMD
+Malaga,Spain,AGP,LEMG
+Menorca,Spain,MAH,LEMH
+Palma de Mallorca,Spain,PMI,LEPA
+Región de Murcia,Spain,RMU,LEMI
+Reus,Spain,REU,LERS
+Santander,Spain,SDR,LEXJ
+Santiago de Compostela,Spain,SCQ,LEST
+Seville,Spain,SVQ,LEZL
+Tenerife North,Spain,TFN,GCXO
+Tenerife South,Spain,TFS,GCTS
+Valencia,Spain,VLC,LEVC
+Zaragoza,Spain,ZAZ,LEZG
+Gothenburg Landvetter,Sweden,GOT,ESGG
+Malmö,Sweden,MMX,ESMS
+Stockholm Arlanda,Sweden,ARN,ESSA
+Stockholm Bromma,Sweden,BMA,ESSB
+Stockholm Skavsta,Sweden,NYO,ESKN
+Stockholm Västerås,Sweden,VST,ESOW
+Basel Mulhouse Freiburg,Switzerland,BSL,LFSB
+Bern,Switzerland,BRN,LSZB
+Geneva,Switzerland,GVA,LSGG
+Zurich,Switzerland,ZRH,LSZH
+Adana,Turkey,ADA,LTAF
+Ankara Esenboga,Turkey,ESB,LTAC
+Antalya,Turkey,AYT,LTAI
+Dalaman,Turkey,DLM,LTBS
+Istanbul New,Turkey,IST,LTFM
+Istanbul Sabiha Gökcen,Turkey,SAW,LTFJ
+Izmir Adnan Menderes,Turkey,ADB,LTBJ
+Milas-Bodrum,Turkey,BJV,LTFE
+Trabzon,Turkey,TZX,LTCG
+Kharkiv,Ukraine,HRK,UKHH
+Kiev Boryspil,Ukraine,KBP,UKBB
+Kiev Zhuliany,Ukraine,IEV,UKKK
+Lviv,Ukraine,LWO,UKLL
+Odessa,Ukraine,ODS,UKOO
+Aberdeen,United Kingdom,ABZ,EGPD
+Belfast City,United Kingdom,BHD,EGAC
+Belfast International,United Kingdom,BFS,EGAA
+Birmingham,United Kingdom,BHX,EGBB
+Bristol,United Kingdom,BRS,EGGD
+Cardiff,United Kingdom,CWL,EGFF
+Doncaster Sheffield,United Kingdom,DSA,EGCN
+East Midlands,United Kingdom,EMA,EGNX
+Edinburgh,United Kingdom,EDI,EGPH
+Exeter,United Kingdom,EXT,EGTE
+Glasgow,United Kingdom,GLA,EGPF
+Glasgow Prestwick,United Kingdom,PIK,EGPK
+Humberside,United Kingdom,HUY,EGNJ
+Jersey,United Kingdom,JER,EGJJ
+Leeds Bradford,United Kingdom,LBA,EGNM
+Liverpool,United Kingdom,LPL,EGGP
+London City,United Kingdom,LCY,EGLC
+London Gatwick,United Kingdom,LGW,EGKK
+London Heathrow,United Kingdom,LHR,EGLL
+London Luton,United Kingdom,LTN,EGGW
+London Southend,United Kingdom,SEN,EGMC
+London Stansted,United Kingdom,STN,EGSS
+Manchester,United Kingdom,MAN,EGCC
+Newcastle,United Kingdom,NCL,EGNT
+Southampton,United Kingdom,SOU,EGHI

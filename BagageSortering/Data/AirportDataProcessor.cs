@@ -31,6 +31,18 @@ namespace BagageSortering.Data.Database.Processing
 
         }
 
+        public string GetAirport(string code)
+        {
+            Airport airport = airports.Find(x => x.AirportCode == code);
+
+            if(airport is null)
+            {
+                return "";
+            }
+
+            return airport.AirportName;
+        }
+
         public FlightData GetFlight(string flightNumber)
         {
             return flightsList.Find(x => x.FlightNumber == flightNumber);
@@ -52,6 +64,11 @@ namespace BagageSortering.Data.Database.Processing
                     flight.Seats.Add(new AirplaneSeat($"{row + 1}F"));
                 }
             }
+        }
+
+        public Passenger GetPassenger(int passengerID)
+        {
+            return passengers.Find(x => x.PassengerID == passengerID);
         }
 
         public List<FlightData> GetFlightsList()
