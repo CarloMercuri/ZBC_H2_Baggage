@@ -62,7 +62,7 @@ namespace AirportGUI.Windows
 
                     Button btn = new Button();
 
-                    string imageName = "";
+
                     var brush = new ImageBrush();
                     if (flight.Seats[seatIndex].ReservationID == "" || flight.Seats[seatIndex].ReservationID == null)
                     {                        
@@ -97,6 +97,7 @@ namespace AirportGUI.Windows
         {
             AirplaneSeat seat = flight.Seats[selectedSeatIndex];
             info_Seat.Text = $"Seat: {seat.SeatName}";
+            info_Seat.Visibility = Visibility.Visible;
             info_Status.Visibility = Visibility.Visible;            
             info_Start.Visibility = Visibility.Hidden;
 

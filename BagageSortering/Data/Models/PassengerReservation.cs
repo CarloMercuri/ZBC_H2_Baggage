@@ -49,6 +49,13 @@ namespace BagageSortering.Data.Database.Models
             set { seatName = value; }
         }
 
+        private bool checkedIn;
+
+        public bool CheckedIn
+        {
+            get { return checkedIn; }
+            set { checkedIn = value; }
+        }
 
 
 
