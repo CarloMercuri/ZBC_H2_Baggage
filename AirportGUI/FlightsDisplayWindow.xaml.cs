@@ -35,6 +35,9 @@ namespace AirportGUI
             InitializeComponent();
 
             //processor.GenerateRandomReservations();
+            //MessageBox.Show($"Physical location {AppDomain.CurrentDomain.BaseDirectory}");
+
+            
 
             flights = processor.GetUpcomingFlights(constants.CurrentTime);
 

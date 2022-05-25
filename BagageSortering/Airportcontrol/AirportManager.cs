@@ -197,6 +197,7 @@ namespace BagageSortering.Airportcontrol
                 AirplaneSeat seat = new AirplaneSeat(r.SeatName);
                 seat.ReservationID = r.ReservationID;
                 seat.PersonID = r.PassengerID;
+                seat.SeatName = r.SeatName;
                 seats.Add(seat);
             }
 
@@ -218,11 +219,14 @@ namespace BagageSortering.Airportcontrol
                 .Select(s => s[rand.Next(s.Length)]).ToArray());
         }
 
+
+        // DONT LOOK AT THIS CODE. HERE BE DRAGONS.
+        // Only meant to run once to generate reservations for the DB.
         public void GenerateRandomReservations()
         {
             Random rand = new Random();
-            List<PassengerReservation> pReservations = new List<PassengerReservation>();
-            
+
+            List<PassengerReservation> finalPassReservations = new List<PassengerReservation>();
             List<Reservation> reservationsFinal = new List<Reservation>();
             List<Reservation> flightReservations = new List<Reservation>();
 
@@ -230,6 +234,7 @@ namespace BagageSortering.Airportcontrol
 
             foreach (FlightData flight in flightsList)
             {
+                List<PassengerReservation> pReservations = new List<PassengerReservation>();
                 List<int> usedPassengersIDs = new List<int>();
                 int seatIndex = 0;
                 int passengerIndex = 0;
@@ -274,18 +279,16 @@ namespace BagageSortering.Airportcontrol
                     pres.PassengerID = passengerIndex;
                     pres.CheckedLuggage = 0;
                     pres.MaxLuggage = rand.Next(1, 4);
-                    flight.Seats[seatIndex].ReservationID = resID;
-                    flight.Seats[seatIndex].PersonID = passengerIndex;
-                    pres.SeatName = seatIndex.ToString();
+                    //flight.Seats[seatIndex].ReservationID = resID;
+                    //flight.Seats[seatIndex].PersonID = passengerIndex;
+                    //pres.SeatName = seatIndex.ToString();
                     pReservations.Add(pres);
 
                     flightReservations.Add(r);
-
-                    seatIndex++;
-
                 }
 
                 int spotsToFill = flight.MaxPassengers - reservationsCount;
+                int emptySpots = 0;
 
                 foreach (Reservation reservation in flightReservations)
                 {
@@ -301,25 +304,60 @@ namespace BagageSortering.Airportcontrol
                         pres.PassengerID = passengerIndex;
                         pres.CheckedLuggage = 0;
                         pres.MaxLuggage = rand.Next(1, 4);
-                        flight.Seats[seatIndex].ReservationID = reservation.ReservationID;
-                        flight.Seats[seatIndex].PersonID = passengerIndex;
-                        pres.SeatName = seatIndex.ToString();
+                        //flight.Seats[seatIndex].ReservationID = reservation.ReservationID;
+                        //flight.Seats[seatIndex].PersonID = passengerIndex;
+                        //pres.SeatName = seatIndex.ToString();
                         passengerIndex++;
-                        seatIndex++;
                         pReservations.Add(pres);
+                    }
+                    else
+                    {
+                        emptySpots++;
                     }
                     
                     spotsToFill--;
                     
                 }
 
+                List<int> emptySeats = GetRandomEmptyspots(flight.Seats.Count, emptySpots);
+
+                int resIndex = 0;
+
+                for (int i = 0; i < flight.Seats.Count; i++)
+                {
+                    if (emptySeats.Contains(i)) continue;
+                    flight.Seats[i].ReservationID = pReservations[resIndex].ReservationID;
+                    flight.Seats[i].PersonID = pReservations[resIndex].PassengerID;
+                    pReservations[resIndex].SeatName = i.ToString();
+                    resIndex++;
+                }
+
+                finalPassReservations.AddRange(pReservations);
                 reservationsFinal.AddRange(flightReservations);
             }
 
             
             dataProcessor.AddToReservations(reservationsFinal);
-            dataProcessor.AddToPassengerReservations(pReservations);
+            dataProcessor.AddToPassengerReservations(finalPassReservations);
 
+        }
+
+        private List<int> GetRandomEmptyspots(int listCount, int maxEmptySpots)
+        {
+            List<int> emptyspots = new List<int>();
+            Random rand = new Random();
+
+            while(emptyspots.Count < maxEmptySpots)
+            {
+                int spot = rand.Next(0, listCount);
+
+                if (!emptyspots.Contains(spot))
+                {
+                    emptyspots.Add(spot);
+                }
+            }
+
+            return emptyspots;
         }
 
         public AirlineInformation GetAirline(string flightNumber)
