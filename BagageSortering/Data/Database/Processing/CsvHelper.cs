@@ -8,15 +8,14 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace BagageSortering.Data.Database.Processing
 {
     public class CsvHelper
     {
-
-        private string FolderPath = "C:/dev/ZBC/Threads/BagageSortering/BagageSortering/Data/Database/Csv/";
-        //private string FolderPath = "D:/dev/school/ZBC_H2_Baggage/BagageSortering/Data/Database/Csv/";
+        private string FolderPath;
         private string airports_FN = "Airports.csv";
         private string TerminalGates_FN = "AirportTerminalGates.csv";
         private string Flights_FN = "Flights.csv";
@@ -24,8 +23,12 @@ namespace BagageSortering.Data.Database.Processing
         private string AirlineInformation_FN = "Companies.csv";
         private string Passengers_FN = "Passengers.csv";
         private string Reservations_FN = "Reservations.csv";
-    
 
+        public CsvHelper()
+        {
+            string baseDir = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\..\"));            
+            FolderPath = Path.Combine(baseDir, "BagageSortering/Data/Database/Csv/");
+        }
 
         public void AddToReservations(List<Reservation> reservations)
         {
