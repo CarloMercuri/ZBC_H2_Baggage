@@ -41,13 +41,16 @@ namespace AirportGUI
 
             flights = processor.GetUpcomingFlights(constants.CurrentTime);
 
+            
             for (int i = 0; i < mainGrid.RowDefinitions.Count - 1; i++)
             {
                 if (i >= flights.Count) break;
                 
+                // Delegate the creation of a flight line to this class
                 FlightDataDisplay disp = new FlightDataDisplay(flights[i], mainGrid, i + 1);
             }
 
+            // Create the invisible buttons to click the line
             for (int i = 0; i < 14; i++)
             {
                 Button btn = new Button();
@@ -62,10 +65,9 @@ namespace AirportGUI
                 mainGrid.Children.Add(btn);
             }
 
-            Console.WriteLine();
         }
 
-        private void btn_Seats_MouseDown(object sender, MouseButtonEventArgs e)
+        private void btn_Inspector_MouseDown(object sender, MouseButtonEventArgs e)
         {
             FlightInspector fdw = new FlightInspector(flights[selectedFlight].FlightNumber);
             fdw.Show();
